@@ -1,0 +1,30 @@
+{
+  "type": "bundle",
+  "id": "bundle_ai_act",
+  "title": "AI Act",
+  "description": "EU Artificial Intelligence Act and its national implementing laws.",
+  "members": [
+    {
+      "ref": "act_eu_ai_act_2024_1689",
+      "label": "AI Act (Regulation (EU) 2024/1689)"
+    },
+    {
+      "type": "bundle",
+      "id": "bundle_ai_act_de",
+      "title": "Germany",
+      "description": "German national law implementing the AI Act.",
+      "members": [
+        {
+          "ref": "act_de_kimig_2026",
+          "label": "KI-MIG"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tags": [
+      "ai"
+    ],
+    "updated": "2026-10-09"
+  }
+}

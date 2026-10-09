@@ -154,12 +154,33 @@
         "url": "https://www.recht.bund.de/bgbl/1/2025/301/regelungstext.pdf?__blob=publicationFile&v=2",
         "parser": "nis2_bsig"
       }
+    },
+    {
+      "id": "act_de_kimig_2026",
+      "path": "regulations-data/ki_mig.json",
+      "label": "KI-MIG (KI-Marktüberwachungs- und Innovationsförderungsgesetz)",
+      "heading": "KI-Marktüberwachungs-und-Innovationsförderungs-Gesetzso",
+      "jurisdiction": "DE",
+      "dateInForce": "2026-07-29",
+      "update": {
+        "url": [
+          "https://www.gesetze-im-internet.de/ki-mig/BJNR0DF0B0026.html",
+          "https://raw.githubusercontent.com/QuantLaw/gesetze-im-internet/data/data/items/ki-mig/BJNR0DF0B0026.xml"
+        ],
+        "parser": "boersengesetz",
+        "encoding": "latin-1"
+      }
     }
   ],  "bundles": [
     {
       "id": "bundle_dora",
       "path": "data/bundles/dora.json",
       "label": "DORA"
+    },
+    {
+      "id": "bundle_ai_act",
+      "path": "data/bundles/ai_act.json",
+      "label": "AI Act"
     }
   ]
 }
