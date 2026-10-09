@@ -121,6 +121,20 @@
       "authId": "celex:32016R0679"
     },
     {
+      "id": "act_eu_dsgvo_2016_0679",
+      "path": "regulations-data/dsgvo.json",
+      "label": "DSGVO (Verordnung (EU) 2016/679)",
+      "heading": "Datenschutz-Grundverordnung",
+      "jurisdiction": "EU",
+      "update": {
+        "url": [
+          "https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:02016R0679-20160504",
+          "https://op.europa.eu/o/opportal-service/download-handler?identifier=5f2552c2-cc45-11e6-ad7c-01aa75ed71a1&format=HTML&language=de&productionSystem=cellar&part="
+        ],
+        "parser": "consolidated"
+      }
+    },
+    {
       "id": "act_eu_csa_2019_0881",
       "path": "regulations-data/cybersecurity_act.json",
       "label": "Cybersecurity Act (Regulation (EU) 2019/881)",
@@ -160,6 +174,11 @@
       "id": "bundle_dora",
       "path": "data/bundles/dora.json",
       "label": "DORA"
+    },
+    {
+      "id": "bundle_gdpr",
+      "path": "data/bundles/gdpr.json",
+      "label": "GDPR"
     }
   ]
 }
