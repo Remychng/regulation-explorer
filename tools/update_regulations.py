@@ -246,10 +246,13 @@ def parse_articles(content: bytes, parser_name: str, encoding: str) -> list[dict
 def linked_articles(articles: list[dict], act_id: str) -> list[dict]:
     linker = load_module("update_link_references", APP / "tools" / "link_references.py")
     self_ids = linker.self_article_ids(articles)
+    german_article_act = linker.has_german_article_headings(articles)
     for article in articles:
         for paragraph in article.get("paragraphs", []):
             text = paragraph.get("text", "")
-            paragraph["text"] = linker.link_text(text, act_id, self_ids)
+            paragraph["text"] = linker.link_text(
+                text, act_id, self_ids, german_article_act
+            )
     return articles
 
 

@@ -22,9 +22,9 @@ lr = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(lr)
 
 
-def link(text, act="act_eu_x_2020_0001", ids=frozenset()):
+def link(text, act="act_eu_x_2020_0001", ids=frozenset(), german_article_act=False):
     """Convenience wrapper around link_text(text, act_id, self_article_ids)."""
-    return lr.link_text(text, act, set(ids))
+    return lr.link_text(text, act, set(ids), german_article_act)
 
 
 # --------------------------------------------------------------------------- #
@@ -108,6 +108,39 @@ def test_boersg_skips_other_statute():
     # "§ 2 ... des Wertpapierhandelsgesetzes" points at WpHG, not this act
     out = link("im Sinne des § 2 Absatz 3 des Wertpapierhandelsgesetzes", ids={"art_2"})
     assert "<a" not in out
+
+
+def test_german_self_article_references():
+    out = link(
+        "siehe Artikel 9 und 10 dieser Verordnung",
+        ids={"art_9", "art_10"},
+        german_article_act=True,
+    )
+    assert 'href="#a:act_eu_x_2020_0001:art_9"' in out
+    assert 'href="#a:act_eu_x_2020_0001:art_10"' in out
+    assert "data-ref" not in out
+
+
+def test_german_article_reference_to_another_regulation_remains_cross_act():
+    out = link(
+        "siehe Artikel 8 der Verordnung (EU) 2022/2554",
+        ids={"art_8"},
+        german_article_act=True,
+    )
+    assert 'data-ref="celex:32022R2554"' in out
+    assert 'data-article="8"' in out
+    assert 'href="#a:act_eu_x_2020_0001:art_8"' not in out
+
+
+def test_german_treaty_article_is_not_linked_to_current_act():
+    out = link("Artikel 8 Absatz 1 AEUV", ids={"art_8"}, german_article_act=True)
+    assert "<a" not in out
+
+
+def test_german_same_act_linking_requires_german_article_headings():
+    assert lr.has_german_article_headings([{"title": "Artikel 1"}])
+    assert not lr.has_german_article_headings([{"title": "§ 1"}])
+    assert "<a" not in link("Artikel 1", ids={"art_1"})
 
 
 # --------------------------------------------------------------------------- #

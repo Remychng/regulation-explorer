@@ -67,7 +67,8 @@ the runtime only decides where each one goes (it never re-parses text).
 **Convert time** — `python3 tools/link_references.py` (idempotent). Scans each
 paragraph and writes `<a class="ref">` anchors:
 
-- **same-act** (`Article N`, German `§ N`) → `href="#a:<thisAct>:art_N"`, no id
+- **same-act** (`Article N`, German `§ N`, or `Artikel N` in acts with German
+  article headings) → `href="#a:<thisAct>:art_N"`, no id
 - **cross-act** (`Article N of Regulation (EU) 2022/2554`, incl. compound lists) →
   `data-ref="celex:32022R2554"` (+ `data-article="N"`), plus an EUR-Lex `href` fallback
 

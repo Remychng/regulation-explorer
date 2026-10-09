@@ -656,28 +656,6 @@
         "name": "Eurex Repo GmbH"
       }
     ],
-    "bundle_gdpr_de": [
-      {
-        "shortName": "CEAG",
-        "name": "Clearstream Europe AG"
-      },
-      {
-        "shortName": "CHAG",
-        "name": "Clearstream Holding AG"
-      },
-      {
-        "shortName": "DBAG",
-        "name": "Deutsche Boerse AG"
-      },
-      {
-        "shortName": "ECAG",
-        "name": "Eurex Clearing AG"
-      },
-      {
-        "shortName": "ERG",
-        "name": "Eurex Repo GmbH"
-      }
-    ],
     "act_eu_dsgvo_2016_0679": [
       {
         "shortName": "CEAG",

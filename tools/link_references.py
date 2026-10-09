@@ -290,6 +290,11 @@ DE_OF = r"(?:\s*\([^)]*\)|\s*,|\s+(?:Absatz|Abs\.|Unterabsatz|Satz|Nummer|Nr\.|B
 DE_ART_LIST = re.compile(
     r"\b(Artikeln?)\s+(\d+[a-z]?(?:\s*(?:,|und|oder|bis|\u2013|-)\s*\d+[a-z]?)*)"
 )
+DE_TREATY_ARTICLE = re.compile(
+    r"^\s*(?:(?:Absatz|Abs\.|Unterabsatz|Satz|Nummer|Nr\.|Buchstabe|Ziffer)"
+    r"\s*[0-9a-z]+\s*)*(?:AEUV|EUV|EAGV|EMRK|GRCh|GRC)\b",
+    re.I,
+)
 # Short-name citations mapped to their permanent CELEX id.
 NAMED_CELEX = {"nis-2-richtlinie": "32022L2555"}
 NAMED_RE = re.compile(r"NIS-?\s*2-\s*Richtlinie", re.I)
@@ -346,6 +351,17 @@ def render_de_target(text, pos):
         cx = NAMED_CELEX[nm.group(0).lower().replace(" ", "")]
         return a_cross_act(cx, nm.group(0)), nm.end(), cx
     return None
+
+
+def make_pass_de_self(act_id, self_ids):
+    def pass_de_self(text):
+        def repl(m):
+            after = text[m.end():]
+            if re.match(DE_OF, after) or DE_TREATY_ARTICLE.match(after):
+                return m.group(0)
+            return _link_list_self(m.group(1), m.group(2), act_id, self_ids)
+        return DE_ART_LIST.sub(repl, text)
+    return pass_de_self
 
 
 def pass_de_cross(text):
@@ -414,12 +430,21 @@ def self_article_ids(articles):
     return ids
 
 
-def link_text(text, act_id, self_ids):
+def has_german_article_headings(articles):
+    return any(
+        re.match(r"^Artikel\s+\d+[a-z]?\b", article.get("title") or "", re.I)
+        for article in articles or []
+    )
+
+
+def link_text(text, act_id, self_ids, german_article_act=False):
     t = unwrap(text)
     t = outside_anchors(t, pass_cross)
     t = outside_anchors(t, make_pass_self(act_id, self_ids))
     t = outside_anchors(t, make_pass_para_self(act_id, self_ids))
     t = outside_anchors(t, pass_citations)
+    if german_article_act:
+        t = outside_anchors(t, make_pass_de_self(act_id, self_ids))
     t = outside_anchors(t, pass_de_cross)
     t = outside_anchors(t, pass_de_citations)
     return t
@@ -430,12 +455,13 @@ def process_act(path, act_id):
         doc = json.load(f)
     articles = doc["articles"] if isinstance(doc, dict) else doc
     self_ids = self_article_ids(articles)
+    german_article_act = has_german_article_headings(articles)
 
     n_refs = 0
     for art in articles:
         for para in art.get("paragraphs", []):
             before = para.get("text", "")
-            after = link_text(before, act_id, self_ids)
+            after = link_text(before, act_id, self_ids, german_article_act)
             if after != before:
                 para["text"] = after
             n_refs += after.count('class="ref"')

@@ -47,6 +47,17 @@ test('DORA bundle root shows the union of descendant applicability', async () =>
   assert.deepStrictEqual(chips.map((chip) => chip.textContent), ['CEAG', 'CHAG', 'DBAG', 'ECAG', 'ERG']);
 });
 
+test('GDPR bundle lists DSGVO directly, without a language subfolder', async () => {
+  app.nav('#bundle:bundle_gdpr');
+  await app.tick();
+  const members = [...app.doc.querySelectorAll('.bundle-members > li > a')];
+  assert.deepStrictEqual(
+    members.map((member) => member.textContent),
+    ['GDPR (Regulation (EU) 2016/679)', 'DSGVO'],
+  );
+  assert.strictEqual(app.doc.querySelector('a[href="#bundle:bundle_gdpr_de"]'), null);
+});
+
 test('DORA technical-standard folders show descendant applicability', async () => {
   app.nav('#bundle:bundle_dora_rts');
   await app.tick();
@@ -109,6 +120,17 @@ test('same-act (self) ref navigates within the act', async () => {
   const ev = app.click(self); await app.tick();
   assert.strictEqual(ev.defaultPrevented, true);
   assert.match(app.hash(), /act_eu_dora_reg_2022_2554/);
+});
+
+test('German DSGVO article ref navigates within DSGVO', async () => {
+  await app.openAct('act_eu_dsgvo_2016_0679');
+  const self = app.doc.querySelector(
+    'a.ref:not([data-ref])[href^="#a:act_eu_dsgvo_2016_0679:art_"]',
+  );
+  assert.ok(self, 'expected a German same-act article reference');
+  const ev = app.click(self); await app.tick();
+  assert.strictEqual(ev.defaultPrevented, true);
+  assert.match(app.hash(), /act_eu_dsgvo_2016_0679:art_/);
 });
 
 test('paragraph citation uses the current regulation name', async () => {
