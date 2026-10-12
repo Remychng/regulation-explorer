@@ -118,7 +118,11 @@
       "id": "act_eu_gdpr_2016_0679",
       "path": "regulations-data/gdpr.json",
       "label": "GDPR (Regulation (EU) 2016/679)",
-      "authId": "celex:32016R0679"
+      "authId": "celex:32016R0679",
+      "update": {
+        "url": "https://publications.europa.eu/resource/celex/32016R0679",
+        "parser": "oj_lists"
+      }
     },
     {
       "id": "act_eu_dsgvo_2016_0679",
@@ -131,7 +135,7 @@
           "https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:02016R0679-20160504",
           "https://op.europa.eu/o/opportal-service/download-handler?identifier=5f2552c2-cc45-11e6-ad7c-01aa75ed71a1&format=HTML&language=de&productionSystem=cellar&part="
         ],
-        "parser": "consolidated"
+        "parser": "consolidated_lists"
       }
     },
     {

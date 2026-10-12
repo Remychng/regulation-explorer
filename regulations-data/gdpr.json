@@ -120,8 +120,173 @@
       "paragraphs": [
         {
           "id": "art_4__1",
-          "text": "For the purposes of this Regulation: (1) ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; (2) ‘processing’ means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction; (3) ‘restriction of processing’ means the marking of stored personal data with the aim of limiting their processing in the future; (4) ‘profiling’ means any form of automated processing of personal data consisting of the use of personal data to evaluate certain personal aspects relating to a natural person, in particular to analyse or predict aspects concerning that natural person&#x27;s performance at work, economic situation, health, personal preferences, interests, reliability, behaviour, location or movements; (5) ‘pseudonymisation’ means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person; (6) ‘filing system’ means any structured set of personal data which are accessible according to specific criteria, whether centralised, decentralised or dispersed on a functional or geographical basis; (7) ‘controller’ means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law; (8) ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller; (9) ‘recipient’ means a natural or legal person, public authority, agency or another body, to which the personal data are disclosed, whether a third party or not. However, public authorities which may receive personal data in the framework of a particular inquiry in accordance with Union or Member State law shall not be regarded as recipients; the processing of those data by those public authorities shall be in compliance with the applicable data protection rules according to the purposes of the processing; (10) ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data; (11) ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject&#x27;s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her; (12) ‘personal data breach’ means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed; (13) ‘genetic data’ means personal data relating to the inherited or acquired genetic characteristics of a natural person which give unique information about the physiology or the health of that natural person and which result, in particular, from an analysis of a biological sample from the natural person in question; (14) ‘biometric data’ means personal data resulting from specific technical processing relating to the physical, physiological or behavioural characteristics of a natural person, which allow or confirm the unique identification of that natural person, such as facial images or dactyloscopic data; (15) ‘data concerning health’ means personal data related to the physical or mental health of a natural person, including the provision of health care services, which reveal information about his or her health status; (16) ‘main establishment’ means: (a) as regards a controller with establishments in more than one Member State, the place of its central administration in the Union, unless the decisions on the purposes and means of the processing of personal data are taken in another establishment of the controller in the Union and the latter establishment has the power to have such decisions implemented, in which case the establishment having taken such decisions is to be considered to be the main establishment; (b) as regards a processor with establishments in more than one Member State, the place of its central administration in the Union, or, if the processor has no central administration in the Union, the establishment of the processor in the Union where the main processing activities in the context of the activities of an establishment of the processor take place to the extent that the processor is subject to specific obligations under this Regulation; (17) ‘representative’ means a natural or legal person established in the Union who, designated by the controller or processor in writing pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_27\" class=\"ref\" data-article=\"27\">Article 27</a>, represents the controller or processor with regard to their respective obligations under this Regulation; (18) ‘enterprise’ means a natural or legal person engaged in an economic activity, irrespective of its legal form, including partnerships or associations regularly engaged in an economic activity; (19) ‘group of undertakings’ means a controlling undertaking and its controlled undertakings; (20) ‘binding corporate rules’ means personal data protection policies which are adhered to by a controller or processor established on the territory of a Member State for transfers or a set of transfers of personal data to a controller or processor in one or more third countries within a group of undertakings, or group of enterprises engaged in a joint economic activity; (21) ‘supervisory authority’ means an independent public authority which is established by a Member State pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_51\" class=\"ref\" data-article=\"51\">Article 51</a>; (22) ‘supervisory authority concerned’ means a supervisory authority which is concerned by the processing of personal data because: (a) the controller or processor is established on the territory of the Member State of that supervisory authority; (b) data subjects residing in the Member State of that supervisory authority are substantially affected or likely to be substantially affected by the processing; or (c) a complaint has been lodged with that supervisory authority; (23) ‘cross-border processing’ means either: (a) processing of personal data which takes place in the context of the activities of establishments in more than one Member State of a controller or processor in the Union where the controller or processor is established in more than one Member State; or (b) processing of personal data which takes place in the context of the activities of a single establishment of a controller or processor in the Union but which substantially affects or is likely to substantially affect data subjects in more than one Member State. (24) ‘relevant and reasoned objection’ means an objection to a draft decision as to whether there is an infringement of this Regulation, or whether envisaged action in relation to the controller or processor complies with this Regulation, which clearly demonstrates the significance of the risks posed by the draft decision as regards the fundamental rights and freedoms of data subjects and, where applicable, the free flow of personal data within the Union; (25) ‘information society service’ means a service as defined in point (b) of <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L1535\" class=\"ref\" data-ref=\"celex:32015L1535\" data-article=\"1\" target=\"_blank\" rel=\"noopener\">Article 1</a>(1) of <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L1535\" class=\"ref\" data-ref=\"celex:32015L1535\" target=\"_blank\" rel=\"noopener\">Directive (EU) 2015/1535</a> of the European Parliament and of the Council ( 19 ) ; (26) ‘international organisation’ means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.",
+          "text": "For the purposes of this Regulation:",
           "class": ""
+        },
+        {
+          "id": "art_4__2",
+          "text": "(1) ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__3",
+          "text": "(2) ‘processing’ means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__4",
+          "text": "(3) ‘restriction of processing’ means the marking of stored personal data with the aim of limiting their processing in the future;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__5",
+          "text": "(4) ‘profiling’ means any form of automated processing of personal data consisting of the use of personal data to evaluate certain personal aspects relating to a natural person, in particular to analyse or predict aspects concerning that natural person&#39;s performance at work, economic situation, health, personal preferences, interests, reliability, behaviour, location or movements;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__6",
+          "text": "(5) ‘pseudonymisation’ means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__7",
+          "text": "(6) ‘filing system’ means any structured set of personal data which are accessible according to specific criteria, whether centralised, decentralised or dispersed on a functional or geographical basis;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__8",
+          "text": "(7) ‘controller’ means the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__9",
+          "text": "(8) ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__10",
+          "text": "(9) ‘recipient’ means a natural or legal person, public authority, agency or another body, to which the personal data are disclosed, whether a third party or not. However, public authorities which may receive personal data in the framework of a particular inquiry in accordance with Union or Member State law shall not be regarded as recipients; the processing of those data by those public authorities shall be in compliance with the applicable data protection rules according to the purposes of the processing;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__11",
+          "text": "(10) ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__12",
+          "text": "(11) ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject&#39;s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__13",
+          "text": "(12) ‘personal data breach’ means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__14",
+          "text": "(13) ‘genetic data’ means personal data relating to the inherited or acquired genetic characteristics of a natural person which give unique information about the physiology or the health of that natural person and which result, in particular, from an analysis of a biological sample from the natural person in question;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__15",
+          "text": "(14) ‘biometric data’ means personal data resulting from specific technical processing relating to the physical, physiological or behavioural characteristics of a natural person, which allow or confirm the unique identification of that natural person, such as facial images or dactyloscopic data;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__16",
+          "text": "(15) ‘data concerning health’ means personal data related to the physical or mental health of a natural person, including the provision of health care services, which reveal information about his or her health status;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__17",
+          "text": "(16) ‘main establishment’ means:",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__18",
+          "text": "(a) as regards a controller with establishments in more than one Member State, the place of its central administration in the Union, unless the decisions on the purposes and means of the processing of personal data are taken in another establishment of the controller in the Union and the latter establishment has the power to have such decisions implemented, in which case the establishment having taken such decisions is to be considered to be the main establishment;",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__19",
+          "text": "(b) as regards a processor with establishments in more than one Member State, the place of its central administration in the Union, or, if the processor has no central administration in the Union, the establishment of the processor in the Union where the main processing activities in the context of the activities of an establishment of the processor take place to the extent that the processor is subject to specific obligations under this Regulation;",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__20",
+          "text": "(17) ‘representative’ means a natural or legal person established in the Union who, designated by the controller or processor in writing pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_27\" class=\"ref\" data-article=\"27\">Article 27</a>, represents the controller or processor with regard to their respective obligations under this Regulation;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__21",
+          "text": "(18) ‘enterprise’ means a natural or legal person engaged in an economic activity, irrespective of its legal form, including partnerships or associations regularly engaged in an economic activity;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__22",
+          "text": "(19) ‘group of undertakings’ means a controlling undertaking and its controlled undertakings;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__23",
+          "text": "(20) ‘binding corporate rules’ means personal data protection policies which are adhered to by a controller or processor established on the territory of a Member State for transfers or a set of transfers of personal data to a controller or processor in one or more third countries within a group of undertakings, or group of enterprises engaged in a joint economic activity;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__24",
+          "text": "(21) ‘supervisory authority’ means an independent public authority which is established by a Member State pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_51\" class=\"ref\" data-article=\"51\">Article 51</a>;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__25",
+          "text": "(22) ‘supervisory authority concerned’ means a supervisory authority which is concerned by the processing of personal data because:",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__26",
+          "text": "(a) the controller or processor is established on the territory of the Member State of that supervisory authority;",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__27",
+          "text": "(b) data subjects residing in the Member State of that supervisory authority are substantially affected or likely to be substantially affected by the processing; or",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__28",
+          "text": "(c) a complaint has been lodged with that supervisory authority;",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__29",
+          "text": "(23) ‘cross-border processing’ means either:",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__30",
+          "text": "(a) processing of personal data which takes place in the context of the activities of establishments in more than one Member State of a controller or processor in the Union where the controller or processor is established in more than one Member State; or",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__31",
+          "text": "(b) processing of personal data which takes place in the context of the activities of a single establishment of a controller or processor in the Union but which substantially affects or is likely to substantially affect data subjects in more than one Member State.",
+          "class": "list-item-l2"
+        },
+        {
+          "id": "art_4__32",
+          "text": "(24) ‘relevant and reasoned objection’ means an objection to a draft decision as to whether there is an infringement of this Regulation, or whether envisaged action in relation to the controller or processor complies with this Regulation, which clearly demonstrates the significance of the risks posed by the draft decision as regards the fundamental rights and freedoms of data subjects and, where applicable, the free flow of personal data within the Union;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__33",
+          "text": "(25) ‘information society service’ means a service as defined in point (b) of <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L1535\" class=\"ref\" data-ref=\"celex:32015L1535\" data-article=\"1\" target=\"_blank\" rel=\"noopener\">Article 1</a>(1) of <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L1535\" class=\"ref\" data-ref=\"celex:32015L1535\" target=\"_blank\" rel=\"noopener\">Directive (EU) 2015/1535</a> of the European Parliament and of the Council (19);",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_4__34",
+          "text": "(26) ‘international organisation’ means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.",
+          "class": "list-item-l1"
         }
       ]
     },
@@ -179,7 +344,7 @@
       "paragraphs": [
         {
           "id": "art_6__1",
-          "text": "1. Processing shall be lawful only if and to the extent that at least one of the following applies: Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks.",
+          "text": "1. Processing shall be lawful only if and to the extent that at least one of the following applies:",
           "class": ""
         },
         {
@@ -214,51 +379,61 @@
         },
         {
           "id": "art_6__8",
-          "text": "2. Member States may maintain or introduce more specific provisions to adapt the application of the rules of this Regulation with regard to processing for compliance with points (c) and (e) of paragraph 1 by determining more precisely specific requirements for the processing and other measures to ensure lawful and fair processing including for other specific processing situations as provided for in Chapter IX.",
+          "text": "Point (f) of the first subparagraph shall not apply to processing carried out by public authorities in the performance of their tasks.",
           "class": ""
         },
         {
           "id": "art_6__9",
-          "text": "3. The basis for the processing referred to in point (c) and (e) of paragraph 1 shall be laid down by: The purpose of the processing shall be determined in that legal basis or, as regards the processing referred to in point (e) of paragraph 1, shall be necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller. That legal basis may contain specific provisions to adapt the application of rules of this Regulation, inter alia: the general conditions governing the lawfulness of processing by the controller; the types of data which are subject to the processing; the data subjects concerned; the entities to, and the purposes for which, the personal data may be disclosed; the purpose limitation; storage periods; and processing operations and processing procedures, including measures to ensure lawful and fair processing such as those for other specific processing situations as provided for in Chapter IX. The Union or the Member State law shall meet an objective of public interest and be proportionate to the legitimate aim pursued.",
+          "text": "2. Member States may maintain or introduce more specific provisions to adapt the application of the rules of this Regulation with regard to processing for compliance with points (c) and (e) of paragraph 1 by determining more precisely specific requirements for the processing and other measures to ensure lawful and fair processing including for other specific processing situations as provided for in Chapter IX.",
           "class": ""
         },
         {
           "id": "art_6__10",
+          "text": "3. The basis for the processing referred to in point (c) and (e) of paragraph 1 shall be laid down by:",
+          "class": ""
+        },
+        {
+          "id": "art_6__11",
           "text": "(a) Union law; or",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__11",
+          "id": "art_6__12",
           "text": "(b) Member State law to which the controller is subject.",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__12",
-          "text": "4. Where the processing for a purpose other than that for which the personal data have been collected is not based on the data subject&#x27;s consent or on a Union or Member State law which constitutes a necessary and proportionate measure in a democratic society to safeguard the objectives referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_23\" class=\"ref\" data-article=\"23\">Article 23</a>(1), the controller shall, in order to ascertain whether processing for another purpose is compatible with the purpose for which the personal data are initially collected, take into account, inter alia:",
+          "id": "art_6__13",
+          "text": "The purpose of the processing shall be determined in that legal basis or, as regards the processing referred to in point (e) of paragraph 1, shall be necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller. That legal basis may contain specific provisions to adapt the application of rules of this Regulation, inter alia: the general conditions governing the lawfulness of processing by the controller; the types of data which are subject to the processing; the data subjects concerned; the entities to, and the purposes for which, the personal data may be disclosed; the purpose limitation; storage periods; and processing operations and processing procedures, including measures to ensure lawful and fair processing such as those for other specific processing situations as provided for in Chapter IX. The Union or the Member State law shall meet an objective of public interest and be proportionate to the legitimate aim pursued.",
           "class": ""
         },
         {
-          "id": "art_6__13",
+          "id": "art_6__14",
+          "text": "4. Where the processing for a purpose other than that for which the personal data have been collected is not based on the data subject&#39;s consent or on a Union or Member State law which constitutes a necessary and proportionate measure in a democratic society to safeguard the objectives referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_23\" class=\"ref\" data-article=\"23\">Article 23</a>(1), the controller shall, in order to ascertain whether processing for another purpose is compatible with the purpose for which the personal data are initially collected, take into account, inter alia:",
+          "class": ""
+        },
+        {
+          "id": "art_6__15",
           "text": "(a) any link between the purposes for which the personal data have been collected and the purposes of the intended further processing;",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__14",
+          "id": "art_6__16",
           "text": "(b) the context in which the personal data have been collected, in particular regarding the relationship between data subjects and the controller;",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__15",
+          "id": "art_6__17",
           "text": "(c) the nature of the personal data, in particular whether special categories of personal data are processed, pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_9\" class=\"ref\" data-article=\"9\">Article 9</a>, or whether personal data related to criminal convictions and offences are processed, pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_10\" class=\"ref\" data-article=\"10\">Article 10</a>;",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__16",
+          "id": "art_6__18",
           "text": "(d) the possible consequences of the intended further processing for data subjects;",
           "class": "list-item-l1"
         },
         {
-          "id": "art_6__17",
+          "id": "art_6__19",
           "text": "(e) the existence of appropriate safeguards, which may include encryption or pseudonymisation.",
           "class": "list-item-l1"
         }
@@ -276,7 +451,7 @@
         },
         {
           "id": "art_7__2",
-          "text": "2. If the data subject&#x27;s consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding.",
+          "text": "2. If the data subject&#39;s consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding.",
           "class": ""
         },
         {
@@ -286,7 +461,7 @@
         },
         {
           "id": "art_7__4",
-          "text": "4. When assessing whether consent is freely given, utmost account shall be taken of whether, inter alia , the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract.",
+          "text": "4. When assessing whether consent is freely given, utmost account shall be taken of whether, inter alia, the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract.",
           "class": ""
         }
       ]
@@ -298,16 +473,21 @@
       "paragraphs": [
         {
           "id": "art_8__1",
-          "text": "1. Where point (a) of <a href=\"#a:act_eu_gdpr_2016_0679:art_6\" class=\"ref\" data-article=\"6\">Article 6</a>(1) applies, in relation to the offer of information society services directly to a child, the processing of the personal data of a child shall be lawful where the child is at least 16 years old. Where the child is below the age of 16 years, such processing shall be lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child. Member States may provide by law for a lower age for those purposes provided that such lower age is not below 13 years.",
+          "text": "1. Where point (a) of <a href=\"#a:act_eu_gdpr_2016_0679:art_6\" class=\"ref\" data-article=\"6\">Article 6</a>(1) applies, in relation to the offer of information society services directly to a child, the processing of the personal data of a child shall be lawful where the child is at least 16 years old. Where the child is below the age of 16 years, such processing shall be lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child.",
           "class": ""
         },
         {
           "id": "art_8__2",
-          "text": "2. The controller shall make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child, taking into consideration available technology.",
+          "text": "Member States may provide by law for a lower age for those purposes provided that such lower age is not below 13 years.",
           "class": ""
         },
         {
           "id": "art_8__3",
+          "text": "2. The controller shall make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child, taking into consideration available technology.",
+          "class": ""
+        },
+        {
+          "id": "art_8__4",
           "text": "3. Paragraph 1 shall not affect the general contract law of Member States such as the rules on the validity, formation or effect of a contract in relation to a child.",
           "class": ""
         }
@@ -320,7 +500,7 @@
       "paragraphs": [
         {
           "id": "art_9__1",
-          "text": "1. Processing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person&#x27;s sex life or sexual orientation shall be prohibited.",
+          "text": "1. Processing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person&#39;s sex life or sexual orientation shall be prohibited.",
           "class": ""
         },
         {
@@ -446,7 +626,7 @@
         },
         {
           "id": "art_12__5",
-          "text": "5. Information provided under Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a> and any communication and any actions taken under Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_15\" class=\"ref\" data-article=\"15\">15</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_22\" class=\"ref\" data-article=\"22\">22</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_34\" class=\"ref\" data-article=\"34\">34</a> shall be provided free of charge. Where requests from a data subject are manifestly unfounded or excessive, in particular because of their repetitive character, the controller may either: The controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.",
+          "text": "5. Information provided under Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a> and any communication and any actions taken under Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_15\" class=\"ref\" data-article=\"15\">15</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_22\" class=\"ref\" data-article=\"22\">22</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_34\" class=\"ref\" data-article=\"34\">34</a> shall be provided free of charge. Where requests from a data subject are manifestly unfounded or excessive, in particular because of their repetitive character, the controller may either:",
           "class": ""
         },
         {
@@ -461,16 +641,21 @@
         },
         {
           "id": "art_12__8",
-          "text": "6. Without prejudice to <a href=\"#a:act_eu_gdpr_2016_0679:art_11\" class=\"ref\" data-article=\"11\">Article 11</a>, where the controller has reasonable doubts concerning the identity of the natural person making the request referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_15\" class=\"ref\" data-article=\"15\">15</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_21\" class=\"ref\" data-article=\"21\">21</a>, the controller may request the provision of additional information necessary to confirm the identity of the data subject.",
+          "text": "The controller shall bear the burden of demonstrating the manifestly unfounded or excessive character of the request.",
           "class": ""
         },
         {
           "id": "art_12__9",
-          "text": "7. The information to be provided to data subjects pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a> may be provided in combination with standardised icons in order to give in an easily visible, intelligible and clearly legible manner a meaningful overview of the intended processing. Where the icons are presented electronically they shall be machine-readable.",
+          "text": "6. Without prejudice to <a href=\"#a:act_eu_gdpr_2016_0679:art_11\" class=\"ref\" data-article=\"11\">Article 11</a>, where the controller has reasonable doubts concerning the identity of the natural person making the request referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_15\" class=\"ref\" data-article=\"15\">15</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_21\" class=\"ref\" data-article=\"21\">21</a>, the controller may request the provision of additional information necessary to confirm the identity of the data subject.",
           "class": ""
         },
         {
           "id": "art_12__10",
+          "text": "7. The information to be provided to data subjects pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a> may be provided in combination with standardised icons in order to give in an easily visible, intelligible and clearly legible manner a meaningful overview of the intended processing. Where the icons are presented electronically they shall be machine-readable.",
+          "class": ""
+        },
+        {
+          "id": "art_12__11",
           "text": "8. The Commission shall be empowered to adopt delegated acts in accordance with <a href=\"#a:act_eu_gdpr_2016_0679:art_92\" class=\"ref\" data-article=\"92\">Article 92</a> for the purpose of determining the information to be presented by the icons and the procedures for providing standardised icons.",
           "class": ""
         }
@@ -488,7 +673,7 @@
         },
         {
           "id": "art_13__2",
-          "text": "(a) the identity and the contact details of the controller and, where applicable, of the controller&#x27;s representative;",
+          "text": "(a) the identity and the contact details of the controller and, where applicable, of the controller&#39;s representative;",
           "class": "list-item-l1"
         },
         {
@@ -575,7 +760,7 @@
         },
         {
           "id": "art_14__2",
-          "text": "(a) the identity and the contact details of the controller and, where applicable, of the controller&#x27;s representative;",
+          "text": "(a) the identity and the contact details of the controller and, where applicable, of the controller&#39;s representative;",
           "class": "list-item-l1"
         },
         {
@@ -680,12 +865,12 @@
         },
         {
           "id": "art_14__23",
-          "text": "(b) the provision of such information proves impossible or would involve a disproportionate effort, in particular for processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, subject to the conditions and safeguards referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_89\" class=\"ref\" data-article=\"89\">Article 89</a>(1) or in so far as the obligation referred to in paragraph 1 of this Article is likely to render impossible or seriously impair the achievement of the objectives of that processing. In such cases the controller shall take appropriate measures to protect the data subject&#x27;s rights and freedoms and legitimate interests, including making the information publicly available;",
+          "text": "(b) the provision of such information proves impossible or would involve a disproportionate effort, in particular for processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, subject to the conditions and safeguards referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_89\" class=\"ref\" data-article=\"89\">Article 89</a>(1) or in so far as the obligation referred to in paragraph 1 of this Article is likely to render impossible or seriously impair the achievement of the objectives of that processing. In such cases the controller shall take appropriate measures to protect the data subject&#39;s rights and freedoms and legitimate interests, including making the information publicly available;",
           "class": "list-item-l1"
         },
         {
           "id": "art_14__24",
-          "text": "(c) obtaining or disclosure is expressly laid down by Union or Member State law to which the controller is subject and which provides appropriate measures to protect the data subject&#x27;s legitimate interests; or",
+          "text": "(c) obtaining or disclosure is expressly laid down by Union or Member State law to which the controller is subject and which provides appropriate measures to protect the data subject&#39;s legitimate interests; or",
           "class": "list-item-l1"
         },
         {
@@ -883,7 +1068,7 @@
         },
         {
           "id": "art_18__6",
-          "text": "2. Where processing has been restricted under paragraph 1, such personal data shall, with the exception of storage, only be processed with the data subject&#x27;s consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the Union or of a Member State.",
+          "text": "2. Where processing has been restricted under paragraph 1, such personal data shall, with the exception of storage, only be processed with the data subject&#39;s consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the Union or of a Member State.",
           "class": ""
         },
         {
@@ -1001,22 +1186,22 @@
         },
         {
           "id": "art_22__4",
-          "text": "(b) is authorised by Union or Member State law to which the controller is subject and which also lays down suitable measures to safeguard the data subject&#x27;s rights and freedoms and legitimate interests; or",
+          "text": "(b) is authorised by Union or Member State law to which the controller is subject and which also lays down suitable measures to safeguard the data subject&#39;s rights and freedoms and legitimate interests; or",
           "class": "list-item-l1"
         },
         {
           "id": "art_22__5",
-          "text": "(c) is based on the data subject&#x27;s explicit consent.",
+          "text": "(c) is based on the data subject&#39;s explicit consent.",
           "class": "list-item-l1"
         },
         {
           "id": "art_22__6",
-          "text": "3. In the cases referred to in points (a) and (c) of paragraph 2, the data controller shall implement suitable measures to safeguard the data subject&#x27;s rights and freedoms and legitimate interests, at least the right to obtain human intervention on the part of the controller, to express his or her point of view and to contest the decision.",
+          "text": "3. In the cases referred to in points (a) and (c) of paragraph 2, the data controller shall implement suitable measures to safeguard the data subject&#39;s rights and freedoms and legitimate interests, at least the right to obtain human intervention on the part of the controller, to express his or her point of view and to contest the decision.",
           "class": ""
         },
         {
           "id": "art_22__7",
-          "text": "4. Decisions referred to in paragraph 2 shall not be based on special categories of personal data referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_9\" class=\"ref\" data-article=\"9\">Article 9</a>(1), unless point (a) or (g) of <a href=\"#a:act_eu_gdpr_2016_0679:art_9\" class=\"ref\" data-article=\"9\">Article 9</a>(2) applies and suitable measures to safeguard the data subject&#x27;s rights and freedoms and legitimate interests are in place.",
+          "text": "4. Decisions referred to in paragraph 2 shall not be based on special categories of personal data referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_9\" class=\"ref\" data-article=\"9\">Article 9</a>(1), unless point (a) or (g) of <a href=\"#a:act_eu_gdpr_2016_0679:art_9\" class=\"ref\" data-article=\"9\">Article 9</a>(2) applies and suitable measures to safeguard the data subject&#39;s rights and freedoms and legitimate interests are in place.",
           "class": ""
         }
       ]
@@ -1162,7 +1347,7 @@
         },
         {
           "id": "art_25__2",
-          "text": "2. The controller shall implement appropriate technical and organisational measures for ensuring that, by default, only personal data which are necessary for each specific purpose of the processing are processed. That obligation applies to the amount of personal data collected, the extent of their processing, the period of their storage and their accessibility. In particular, such measures shall ensure that by default personal data are not made accessible without the individual&#x27;s intervention to an indefinite number of natural persons.",
+          "text": "2. The controller shall implement appropriate technical and organisational measures for ensuring that, by default, only personal data which are necessary for each specific purpose of the processing are processed. That obligation applies to the amount of personal data collected, the extent of their processing, the period of their storage and their accessibility. In particular, such measures shall ensure that by default personal data are not made accessible without the individual&#39;s intervention to an indefinite number of natural persons.",
           "class": ""
         },
         {
@@ -1253,7 +1438,7 @@
         },
         {
           "id": "art_28__3",
-          "text": "3. Processing by a processor shall be governed by a contract or other legal act under Union or Member State law, that is binding on the processor with regard to the controller and that sets out the subject-matter and duration of the processing, the nature and purpose of the processing, the type of personal data and categories of data subjects and the obligations and rights of the controller. That contract or other legal act shall stipulate, in particular, that the processor: With regard to point (h) of the first subparagraph, the processor shall immediately inform the controller if, in its opinion, an instruction infringes this Regulation or other Union or Member State data protection provisions.",
+          "text": "3. Processing by a processor shall be governed by a contract or other legal act under Union or Member State law, that is binding on the processor with regard to the controller and that sets out the subject-matter and duration of the processing, the nature and purpose of the processing, the type of personal data and categories of data subjects and the obligations and rights of the controller. That contract or other legal act shall stipulate, in particular, that the processor:",
           "class": ""
         },
         {
@@ -1278,7 +1463,7 @@
         },
         {
           "id": "art_28__8",
-          "text": "(e) taking into account the nature of the processing, assists the controller by appropriate technical and organisational measures, insofar as this is possible, for the fulfilment of the controller&#x27;s obligation to respond to requests for exercising the data subject&#x27;s rights laid down in Chapter III;",
+          "text": "(e) taking into account the nature of the processing, assists the controller by appropriate technical and organisational measures, insofar as this is possible, for the fulfilment of the controller&#39;s obligation to respond to requests for exercising the data subject&#39;s rights laid down in Chapter III;",
           "class": "list-item-l1"
         },
         {
@@ -1298,36 +1483,41 @@
         },
         {
           "id": "art_28__12",
-          "text": "4. Where a processor engages another processor for carrying out specific processing activities on behalf of the controller, the same data protection obligations as set out in the contract or other legal act between the controller and the processor as referred to in paragraph 3 shall be imposed on that other processor by way of a contract or other legal act under Union or Member State law, in particular providing sufficient guarantees to implement appropriate technical and organisational measures in such a manner that the processing will meet the requirements of this Regulation. Where that other processor fails to fulfil its data protection obligations, the initial processor shall remain fully liable to the controller for the performance of that other processor&#x27;s obligations.",
+          "text": "With regard to point (h) of the first subparagraph, the processor shall immediately inform the controller if, in its opinion, an instruction infringes this Regulation or other Union or Member State data protection provisions.",
           "class": ""
         },
         {
           "id": "art_28__13",
-          "text": "5. Adherence of a processor to an approved code of conduct as referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_40\" class=\"ref\" data-article=\"40\">Article 40</a> or an approved certification mechanism as referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">Article 42</a> may be used as an element by which to demonstrate sufficient guarantees as referred to in paragraphs 1 and 4 of this Article.",
+          "text": "4. Where a processor engages another processor for carrying out specific processing activities on behalf of the controller, the same data protection obligations as set out in the contract or other legal act between the controller and the processor as referred to in paragraph 3 shall be imposed on that other processor by way of a contract or other legal act under Union or Member State law, in particular providing sufficient guarantees to implement appropriate technical and organisational measures in such a manner that the processing will meet the requirements of this Regulation. Where that other processor fails to fulfil its data protection obligations, the initial processor shall remain fully liable to the controller for the performance of that other processor&#39;s obligations.",
           "class": ""
         },
         {
           "id": "art_28__14",
-          "text": "6. Without prejudice to an individual contract between the controller and the processor, the contract or the other legal act referred to in paragraphs 3 and 4 of this Article may be based, in whole or in part, on standard contractual clauses referred to in paragraphs 7 and 8 of this Article, including when they are part of a certification granted to the controller or processor pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">42</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_43\" class=\"ref\" data-article=\"43\">43</a>.",
+          "text": "5. Adherence of a processor to an approved code of conduct as referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_40\" class=\"ref\" data-article=\"40\">Article 40</a> or an approved certification mechanism as referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">Article 42</a> may be used as an element by which to demonstrate sufficient guarantees as referred to in paragraphs 1 and 4 of this Article.",
           "class": ""
         },
         {
           "id": "art_28__15",
-          "text": "7. The Commission may lay down standard contractual clauses for the matters referred to in paragraph 3 and 4 of this Article and in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2).",
+          "text": "6. Without prejudice to an individual contract between the controller and the processor, the contract or the other legal act referred to in paragraphs 3 and 4 of this Article may be based, in whole or in part, on standard contractual clauses referred to in paragraphs 7 and 8 of this Article, including when they are part of a certification granted to the controller or processor pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">42</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_43\" class=\"ref\" data-article=\"43\">43</a>.",
           "class": ""
         },
         {
           "id": "art_28__16",
-          "text": "8. A supervisory authority may adopt standard contractual clauses for the matters referred to in paragraph 3 and 4 of this Article and in accordance with the consistency mechanism referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_63\" class=\"ref\" data-article=\"63\">Article 63</a>.",
+          "text": "7. The Commission may lay down standard contractual clauses for the matters referred to in paragraph 3 and 4 of this Article and in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2).",
           "class": ""
         },
         {
           "id": "art_28__17",
-          "text": "9. The contract or the other legal act referred to in paragraphs 3 and 4 shall be in writing, including in electronic form.",
+          "text": "8. A supervisory authority may adopt standard contractual clauses for the matters referred to in paragraph 3 and 4 of this Article and in accordance with the consistency mechanism referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_63\" class=\"ref\" data-article=\"63\">Article 63</a>.",
           "class": ""
         },
         {
           "id": "art_28__18",
+          "text": "9. The contract or the other legal act referred to in paragraphs 3 and 4 shall be in writing, including in electronic form.",
+          "class": ""
+        },
+        {
+          "id": "art_28__19",
           "text": "10. Without prejudice to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_82\" class=\"ref\" data-article=\"82\">82</a>, <a href=\"#a:act_eu_gdpr_2016_0679:art_83\" class=\"ref\" data-article=\"83\">83</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_84\" class=\"ref\" data-article=\"84\">84</a>, if a processor infringes this Regulation by determining the purposes and means of processing, the processor shall be considered to be a controller in respect of that processing.",
           "class": ""
         }
@@ -1352,12 +1542,12 @@
       "paragraphs": [
         {
           "id": "art_30__1",
-          "text": "1. Each controller and, where applicable, the controller&#x27;s representative, shall maintain a record of processing activities under its responsibility. That record shall contain all of the following information:",
+          "text": "1. Each controller and, where applicable, the controller&#39;s representative, shall maintain a record of processing activities under its responsibility. That record shall contain all of the following information:",
           "class": ""
         },
         {
           "id": "art_30__2",
-          "text": "(a) the name and contact details of the controller and, where applicable, the joint controller, the controller&#x27;s representative and the data protection officer;",
+          "text": "(a) the name and contact details of the controller and, where applicable, the joint controller, the controller&#39;s representative and the data protection officer;",
           "class": "list-item-l1"
         },
         {
@@ -1392,12 +1582,12 @@
         },
         {
           "id": "art_30__9",
-          "text": "2. Each processor and, where applicable, the processor&#x27;s representative shall maintain a record of all categories of processing activities carried out on behalf of a controller, containing:",
+          "text": "2. Each processor and, where applicable, the processor&#39;s representative shall maintain a record of all categories of processing activities carried out on behalf of a controller, containing:",
           "class": ""
         },
         {
           "id": "art_30__10",
-          "text": "(a) the name and contact details of the processor or processors and of each controller on behalf of which the processor is acting, and, where applicable, of the controller&#x27;s or the processor&#x27;s representative, and the data protection officer;",
+          "text": "(a) the name and contact details of the processor or processors and of each controller on behalf of which the processor is acting, and, where applicable, of the controller&#39;s or the processor&#39;s representative, and the data protection officer;",
           "class": "list-item-l1"
         },
         {
@@ -1422,7 +1612,7 @@
         },
         {
           "id": "art_30__15",
-          "text": "4. The controller or the processor and, where applicable, the controller&#x27;s or the processor&#x27;s representative, shall make the record available to the supervisory authority on request.",
+          "text": "4. The controller or the processor and, where applicable, the controller&#39;s or the processor&#39;s representative, shall make the record available to the supervisory authority on request.",
           "class": ""
         },
         {
@@ -2118,7 +2308,7 @@
         },
         {
           "id": "art_43__3",
-          "text": "(b) the national accreditation body named in accordance with <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008R0765\" class=\"ref\" data-ref=\"celex:32008R0765\" target=\"_blank\" rel=\"noopener\">Regulation (EC) No 765/2008</a> of the European Parliament and of the Council ( 20 ) in accordance with EN-ISO/IEC 17065/2012 and with the additional requirements established by the supervisory authority which is competent pursuant to Article <a href=\"#a:act_eu_gdpr_2016_0679:art_55\" class=\"ref\" data-article=\"55\">55</a> or <a href=\"#a:act_eu_gdpr_2016_0679:art_56\" class=\"ref\" data-article=\"56\">56</a>.",
+          "text": "(b) the national accreditation body named in accordance with <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008R0765\" class=\"ref\" data-ref=\"celex:32008R0765\" target=\"_blank\" rel=\"noopener\">Regulation (EC) No 765/2008</a> of the European Parliament and of the Council (20) in accordance with EN-ISO/IEC 17065/2012 and with the additional requirements established by the supervisory authority which is competent pursuant to Article <a href=\"#a:act_eu_gdpr_2016_0679:art_55\" class=\"ref\" data-article=\"55\">55</a> or <a href=\"#a:act_eu_gdpr_2016_0679:art_56\" class=\"ref\" data-article=\"56\">56</a>.",
           "class": "list-item-l1"
         },
         {
@@ -2242,26 +2432,31 @@
         },
         {
           "id": "art_45__8",
-          "text": "5. The Commission shall, where available information reveals, in particular following the review referred to in paragraph 3 of this Article, that a third country, a territory or one or more specified sectors within a third country, or an international organisation no longer ensures an adequate level of protection within the meaning of paragraph 2 of this Article, to the extent necessary, repeal, amend or suspend the decision referred to in paragraph 3 of this Article by means of implementing acts without retro-active effect. Those implementing acts shall be adopted in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2). On duly justified imperative grounds of urgency, the Commission shall adopt immediately applicable implementing acts in accordance with the procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(3).",
+          "text": "5. The Commission shall, where available information reveals, in particular following the review referred to in paragraph 3 of this Article, that a third country, a territory or one or more specified sectors within a third country, or an international organisation no longer ensures an adequate level of protection within the meaning of paragraph 2 of this Article, to the extent necessary, repeal, amend or suspend the decision referred to in paragraph 3 of this Article by means of implementing acts without retro-active effect. Those implementing acts shall be adopted in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2).",
           "class": ""
         },
         {
           "id": "art_45__9",
-          "text": "6. The Commission shall enter into consultations with the third country or international organisation with a view to remedying the situation giving rise to the decision made pursuant to paragraph 5.",
+          "text": "On duly justified imperative grounds of urgency, the Commission shall adopt immediately applicable implementing acts in accordance with the procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(3).",
           "class": ""
         },
         {
           "id": "art_45__10",
-          "text": "7. A decision pursuant to paragraph 5 of this Article is without prejudice to transfers of personal data to the third country, a territory or one or more specified sectors within that third country, or the international organisation in question pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">46</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_49\" class=\"ref\" data-article=\"49\">49</a>.",
+          "text": "6. The Commission shall enter into consultations with the third country or international organisation with a view to remedying the situation giving rise to the decision made pursuant to paragraph 5.",
           "class": ""
         },
         {
           "id": "art_45__11",
-          "text": "8. The Commission shall publish in the Official Journal of the European Union and on its website a list of the third countries, territories and specified sectors within a third country and international organisations for which it has decided that an adequate level of protection is or is no longer ensured.",
+          "text": "7. A decision pursuant to paragraph 5 of this Article is without prejudice to transfers of personal data to the third country, a territory or one or more specified sectors within that third country, or the international organisation in question pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">46</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_49\" class=\"ref\" data-article=\"49\">49</a>.",
           "class": ""
         },
         {
           "id": "art_45__12",
+          "text": "8. The Commission shall publish in the Official Journal of the European Union and on its website a list of the third countries, territories and specified sectors within a third country and international organisations for which it has decided that an adequate level of protection is or is no longer ensured.",
+          "class": ""
+        },
+        {
+          "id": "art_45__13",
           "text": "9. Decisions adopted by the Commission on the basis of Article 25(6) of Directive 95/46/EC shall remain in force until amended, replaced or repealed by a Commission Decision adopted in accordance with paragraph 3 or 5 of this Article.",
           "class": ""
         }
@@ -2304,12 +2499,12 @@
         },
         {
           "id": "art_46__7",
-          "text": "(e) an approved code of conduct pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_40\" class=\"ref\" data-article=\"40\">Article 40</a> together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards, including as regards data subjects&#x27; rights; or",
+          "text": "(e) an approved code of conduct pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_40\" class=\"ref\" data-article=\"40\">Article 40</a> together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards, including as regards data subjects&#39; rights; or",
           "class": "list-item-l1"
         },
         {
           "id": "art_46__8",
-          "text": "(f) an approved certification mechanism pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">Article 42</a> together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards, including as regards data subjects&#x27; rights.",
+          "text": "(f) an approved certification mechanism pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_42\" class=\"ref\" data-article=\"42\">Article 42</a> together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards, including as regards data subjects&#39; rights.",
           "class": "list-item-l1"
         },
         {
@@ -2465,7 +2660,7 @@
       "paragraphs": [
         {
           "id": "art_49__1",
-          "text": "1. In the absence of an adequacy decision pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_45\" class=\"ref\" data-article=\"45\">Article 45</a>(3), or of appropriate safeguards pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">Article 46</a>, including binding corporate rules, a transfer or a set of transfers of personal data to a third country or an international organisation shall take place only on one of the following conditions: Where a transfer could not be based on a provision in Article <a href=\"#a:act_eu_gdpr_2016_0679:art_45\" class=\"ref\" data-article=\"45\">45</a> or <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">46</a>, including the provisions on binding corporate rules, and none of the derogations for a specific situation referred to in the first subparagraph of this paragraph is applicable, a transfer to a third country or an international organisation may take place only if the transfer is not repetitive, concerns only a limited number of data subjects, is necessary for the purposes of compelling legitimate interests pursued by the controller which are not overridden by the interests or rights and freedoms of the data subject, and the controller has assessed all the circumstances surrounding the data transfer and has on the basis of that assessment provided suitable safeguards with regard to the protection of personal data. The controller shall inform the supervisory authority of the transfer. The controller shall, in addition to providing the information referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a>, inform the data subject of the transfer and on the compelling legitimate interests pursued.",
+          "text": "1. In the absence of an adequacy decision pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_45\" class=\"ref\" data-article=\"45\">Article 45</a>(3), or of appropriate safeguards pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">Article 46</a>, including binding corporate rules, a transfer or a set of transfers of personal data to a third country or an international organisation shall take place only on one of the following conditions:",
           "class": ""
         },
         {
@@ -2475,7 +2670,7 @@
         },
         {
           "id": "art_49__3",
-          "text": "(b) the transfer is necessary for the performance of a contract between the data subject and the controller or the implementation of pre-contractual measures taken at the data subject&#x27;s request;",
+          "text": "(b) the transfer is necessary for the performance of a contract between the data subject and the controller or the implementation of pre-contractual measures taken at the data subject&#39;s request;",
           "class": "list-item-l1"
         },
         {
@@ -2505,26 +2700,31 @@
         },
         {
           "id": "art_49__9",
-          "text": "2. A transfer pursuant to point (g) of the first subparagraph of paragraph 1 shall not involve the entirety of the personal data or entire categories of the personal data contained in the register. Where the register is intended for consultation by persons having a legitimate interest, the transfer shall be made only at the request of those persons or if they are to be the recipients.",
+          "text": "Where a transfer could not be based on a provision in Article <a href=\"#a:act_eu_gdpr_2016_0679:art_45\" class=\"ref\" data-article=\"45\">45</a> or <a href=\"#a:act_eu_gdpr_2016_0679:art_46\" class=\"ref\" data-article=\"46\">46</a>, including the provisions on binding corporate rules, and none of the derogations for a specific situation referred to in the first subparagraph of this paragraph is applicable, a transfer to a third country or an international organisation may take place only if the transfer is not repetitive, concerns only a limited number of data subjects, is necessary for the purposes of compelling legitimate interests pursued by the controller which are not overridden by the interests or rights and freedoms of the data subject, and the controller has assessed all the circumstances surrounding the data transfer and has on the basis of that assessment provided suitable safeguards with regard to the protection of personal data. The controller shall inform the supervisory authority of the transfer. The controller shall, in addition to providing the information referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_13\" class=\"ref\" data-article=\"13\">13</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_14\" class=\"ref\" data-article=\"14\">14</a>, inform the data subject of the transfer and on the compelling legitimate interests pursued.",
           "class": ""
         },
         {
           "id": "art_49__10",
-          "text": "3. Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply to activities carried out by public authorities in the exercise of their public powers.",
+          "text": "2. A transfer pursuant to point (g) of the first subparagraph of paragraph 1 shall not involve the entirety of the personal data or entire categories of the personal data contained in the register. Where the register is intended for consultation by persons having a legitimate interest, the transfer shall be made only at the request of those persons or if they are to be the recipients.",
           "class": ""
         },
         {
           "id": "art_49__11",
-          "text": "4. The public interest referred to in point (d) of the first subparagraph of paragraph 1 shall be recognised in Union law or in the law of the Member State to which the controller is subject.",
+          "text": "3. Points (a), (b) and (c) of the first subparagraph of paragraph 1 and the second subparagraph thereof shall not apply to activities carried out by public authorities in the exercise of their public powers.",
           "class": ""
         },
         {
           "id": "art_49__12",
-          "text": "5. In the absence of an adequacy decision, Union or Member State law may, for important reasons of public interest, expressly set limits to the transfer of specific categories of personal data to a third country or an international organisation. Member States shall notify such provisions to the Commission.",
+          "text": "4. The public interest referred to in point (d) of the first subparagraph of paragraph 1 shall be recognised in Union law or in the law of the Member State to which the controller is subject.",
           "class": ""
         },
         {
           "id": "art_49__13",
+          "text": "5. In the absence of an adequacy decision, Union or Member State law may, for important reasons of public interest, expressly set limits to the transfer of specific categories of personal data to a third country or an international organisation. Member States shall notify such provisions to the Commission.",
+          "class": ""
+        },
+        {
+          "id": "art_49__14",
           "text": "6. The controller or processor shall document the assessment as well as the suitable safeguards referred to in the second subparagraph of paragraph 1 of this Article in the records referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_30\" class=\"ref\" data-article=\"30\">Article 30</a>.",
           "class": ""
         }
@@ -2537,8 +2737,28 @@
       "paragraphs": [
         {
           "id": "art_50__1",
-          "text": "In relation to third countries and international organisations, the Commission and supervisory authorities shall take appropriate steps to: (a) develop international cooperation mechanisms to facilitate the effective enforcement of legislation for the protection of personal data; (b) provide international mutual assistance in the enforcement of legislation for the protection of personal data, including through notification, complaint referral, investigative assistance and information exchange, subject to appropriate safeguards for the protection of personal data and other fundamental rights and freedoms; (c) engage relevant stakeholders in discussion and activities aimed at furthering international cooperation in the enforcement of legislation for the protection of personal data; (d) promote the exchange and documentation of personal data protection legislation and practice, including on jurisdictional conflicts with third countries.",
+          "text": "In relation to third countries and international organisations, the Commission and supervisory authorities shall take appropriate steps to:",
           "class": ""
+        },
+        {
+          "id": "art_50__2",
+          "text": "(a) develop international cooperation mechanisms to facilitate the effective enforcement of legislation for the protection of personal data;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_50__3",
+          "text": "(b) provide international mutual assistance in the enforcement of legislation for the protection of personal data, including through notification, complaint referral, investigative assistance and information exchange, subject to appropriate safeguards for the protection of personal data and other fundamental rights and freedoms;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_50__4",
+          "text": "(c) engage relevant stakeholders in discussion and activities aimed at furthering international cooperation in the enforcement of legislation for the protection of personal data;",
+          "class": "list-item-l1"
+        },
+        {
+          "id": "art_50__5",
+          "text": "(d) promote the exchange and documentation of personal data protection legislation and practice, including on jurisdictional conflicts with third countries.",
+          "class": "list-item-l1"
         }
       ]
     },
@@ -2781,7 +3001,7 @@
         },
         {
           "id": "art_57__4",
-          "text": "(c) advise, in accordance with Member State law, the national parliament, the government, and other institutions and bodies on legislative and administrative measures relating to the protection of natural persons&#x27; rights and freedoms with regard to processing;",
+          "text": "(c) advise, in accordance with Member State law, the national parliament, the government, and other institutions and bodies on legislative and administrative measures relating to the protection of natural persons&#39; rights and freedoms with regard to processing;",
           "class": "list-item-l1"
         },
         {
@@ -2908,7 +3128,7 @@
         },
         {
           "id": "art_58__2",
-          "text": "(a) to order the controller and the processor, and, where applicable, the controller&#x27;s or the processor&#x27;s representative to provide any information it requires for the performance of its tasks;",
+          "text": "(a) to order the controller and the processor, and, where applicable, the controller&#39;s or the processor&#39;s representative to provide any information it requires for the performance of its tasks;",
           "class": "list-item-l1"
         },
         {
@@ -2953,7 +3173,7 @@
         },
         {
           "id": "art_58__11",
-          "text": "(c) to order the controller or the processor to comply with the data subject&#x27;s requests to exercise his or her rights pursuant to this Regulation;",
+          "text": "(c) to order the controller or the processor to comply with the data subject&#39;s requests to exercise his or her rights pursuant to this Regulation;",
           "class": "list-item-l1"
         },
         {
@@ -3221,7 +3441,7 @@
         },
         {
           "id": "art_62__3",
-          "text": "3. A supervisory authority may, in accordance with Member State law, and with the seconding supervisory authority&#x27;s authorisation, confer powers, including investigative powers on the seconding supervisory authority&#x27;s members or staff involved in joint operations or, in so far as the law of the Member State of the host supervisory authority permits, allow the seconding supervisory authority&#x27;s members or staff to exercise their investigative powers in accordance with the law of the Member State of the seconding supervisory authority. Such investigative powers may be exercised only under the guidance and in the presence of members or staff of the host supervisory authority. The seconding supervisory authority&#x27;s members or staff shall be subject to the Member State law of the host supervisory authority.",
+          "text": "3. A supervisory authority may, in accordance with Member State law, and with the seconding supervisory authority&#39;s authorisation, confer powers, including investigative powers on the seconding supervisory authority&#39;s members or staff involved in joint operations or, in so far as the law of the Member State of the host supervisory authority permits, allow the seconding supervisory authority&#39;s members or staff to exercise their investigative powers in accordance with the law of the Member State of the seconding supervisory authority. Such investigative powers may be exercised only under the guidance and in the presence of members or staff of the host supervisory authority. The seconding supervisory authority&#39;s members or staff shall be subject to the Member State law of the host supervisory authority.",
           "class": ""
         },
         {
@@ -3431,7 +3651,12 @@
       "paragraphs": [
         {
           "id": "art_67__1",
-          "text": "The Commission may adopt implementing acts of general scope in order to specify the arrangements for the exchange of information by electronic means between supervisory authorities, and between supervisory authorities and the Board, in particular the standardised format referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_64\" class=\"ref\" data-article=\"64\">Article 64</a>. Those implementing acts shall be adopted in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2).",
+          "text": "The Commission may adopt implementing acts of general scope in order to specify the arrangements for the exchange of information by electronic means between supervisory authorities, and between supervisory authorities and the Board, in particular the standardised format referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_64\" class=\"ref\" data-article=\"64\">Article 64</a>.",
+          "class": ""
+        },
+        {
+          "id": "art_67__2",
+          "text": "Those implementing acts shall be adopted in accordance with the examination procedure referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_93\" class=\"ref\" data-article=\"93\">Article 93</a>(2).",
           "class": ""
         }
       ]
@@ -3458,7 +3683,7 @@
         },
         {
           "id": "art_68__4",
-          "text": "4. Where in a Member State more than one supervisory authority is responsible for monitoring the application of the provisions pursuant to this Regulation, a joint representative shall be appointed in accordance with that Member State&#x27;s law.",
+          "text": "4. Where in a Member State more than one supervisory authority is responsible for monitoring the application of the provisions pursuant to this Regulation, a joint representative shall be appointed in accordance with that Member State&#39;s law.",
           "class": ""
         },
         {
@@ -3809,7 +4034,7 @@
         },
         {
           "id": "art_76__2",
-          "text": "2. Access to documents submitted to members of the Board, experts and representatives of third parties shall be governed by <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32001R1049\" class=\"ref\" data-ref=\"celex:32001R1049\" target=\"_blank\" rel=\"noopener\">Regulation (EC) No 1049/2001</a> of the European Parliament and of the Council ( 21 ) .",
+          "text": "2. Access to documents submitted to members of the Board, experts and representatives of third parties shall be governed by <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32001R1049\" class=\"ref\" data-ref=\"celex:32001R1049\" target=\"_blank\" rel=\"noopener\">Regulation (EC) No 1049/2001</a> of the European Parliament and of the Council (21).",
           "class": ""
         }
       ]
@@ -3882,12 +4107,12 @@
       "paragraphs": [
         {
           "id": "art_80__1",
-          "text": "1. The data subject shall have the right to mandate a not-for-profit body, organisation or association which has been properly constituted in accordance with the law of a Member State, has statutory objectives which are in the public interest, and is active in the field of the protection of data subjects&#x27; rights and freedoms with regard to the protection of their personal data to lodge the complaint on his or her behalf, to exercise the rights referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_77\" class=\"ref\" data-article=\"77\">77</a>, <a href=\"#a:act_eu_gdpr_2016_0679:art_78\" class=\"ref\" data-article=\"78\">78</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_79\" class=\"ref\" data-article=\"79\">79</a> on his or her behalf, and to exercise the right to receive compensation referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_82\" class=\"ref\" data-article=\"82\">Article 82</a> on his or her behalf where provided for by Member State law.",
+          "text": "1. The data subject shall have the right to mandate a not-for-profit body, organisation or association which has been properly constituted in accordance with the law of a Member State, has statutory objectives which are in the public interest, and is active in the field of the protection of data subjects&#39; rights and freedoms with regard to the protection of their personal data to lodge the complaint on his or her behalf, to exercise the rights referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_77\" class=\"ref\" data-article=\"77\">77</a>, <a href=\"#a:act_eu_gdpr_2016_0679:art_78\" class=\"ref\" data-article=\"78\">78</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_79\" class=\"ref\" data-article=\"79\">79</a> on his or her behalf, and to exercise the right to receive compensation referred to in <a href=\"#a:act_eu_gdpr_2016_0679:art_82\" class=\"ref\" data-article=\"82\">Article 82</a> on his or her behalf where provided for by Member State law.",
           "class": ""
         },
         {
           "id": "art_80__2",
-          "text": "2. Member States may provide that any body, organisation or association referred to in paragraph 1 of this Article, independently of a data subject&#x27;s mandate, has the right to lodge, in that Member State, a complaint with the supervisory authority which is competent pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_77\" class=\"ref\" data-article=\"77\">Article 77</a> and to exercise the rights referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_78\" class=\"ref\" data-article=\"78\">78</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_79\" class=\"ref\" data-article=\"79\">79</a> if it considers that the rights of a data subject under this Regulation have been infringed as a result of the processing.",
+          "text": "2. Member States may provide that any body, organisation or association referred to in paragraph 1 of this Article, independently of a data subject&#39;s mandate, has the right to lodge, in that Member State, a complaint with the supervisory authority which is competent pursuant to <a href=\"#a:act_eu_gdpr_2016_0679:art_77\" class=\"ref\" data-article=\"77\">Article 77</a> and to exercise the rights referred to in Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_78\" class=\"ref\" data-article=\"78\">78</a> and <a href=\"#a:act_eu_gdpr_2016_0679:art_79\" class=\"ref\" data-article=\"79\">79</a> if it considers that the rights of a data subject under this Regulation have been infringed as a result of the processing.",
           "class": ""
         }
       ]
@@ -4058,7 +4283,7 @@
         },
         {
           "id": "art_83__21",
-          "text": "(b) the data subjects&#x27; rights pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_12\" class=\"ref\" data-article=\"12\">12</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_22\" class=\"ref\" data-article=\"22\">22</a>;",
+          "text": "(b) the data subjects&#39; rights pursuant to Articles <a href=\"#a:act_eu_gdpr_2016_0679:art_12\" class=\"ref\" data-article=\"12\">12</a> to <a href=\"#a:act_eu_gdpr_2016_0679:art_22\" class=\"ref\" data-article=\"22\">22</a>;",
           "class": "list-item-l1"
         },
         {
@@ -4168,12 +4393,12 @@
       "paragraphs": [
         {
           "id": "art_88__1",
-          "text": "1. Member States may, by law or by collective agreements, provide for more specific rules to ensure the protection of the rights and freedoms in respect of the processing of employees&#x27; personal data in the employment context, in particular for the purposes of the recruitment, the performance of the contract of employment, including discharge of obligations laid down by law or by collective agreements, management, planning and organisation of work, equality and diversity in the workplace, health and safety at work, protection of employer&#x27;s or customer&#x27;s property and for the purposes of the exercise and enjoyment, on an individual or collective basis, of rights and benefits related to employment, and for the purpose of the termination of the employment relationship.",
+          "text": "1. Member States may, by law or by collective agreements, provide for more specific rules to ensure the protection of the rights and freedoms in respect of the processing of employees&#39; personal data in the employment context, in particular for the purposes of the recruitment, the performance of the contract of employment, including discharge of obligations laid down by law or by collective agreements, management, planning and organisation of work, equality and diversity in the workplace, health and safety at work, protection of employer&#39;s or customer&#39;s property and for the purposes of the exercise and enjoyment, on an individual or collective basis, of rights and benefits related to employment, and for the purpose of the termination of the employment relationship.",
           "class": ""
         },
         {
           "id": "art_88__2",
-          "text": "2. Those rules shall include suitable and specific measures to safeguard the data subject&#x27;s human dignity, legitimate interests and fundamental rights, with particular regard to the transparency of processing, the transfer of personal data within a group of undertakings, or a group of enterprises engaged in a joint economic activity and monitoring systems at the work place.",
+          "text": "2. Those rules shall include suitable and specific measures to safeguard the data subject&#39;s human dignity, legitimate interests and fundamental rights, with particular regard to the transparency of processing, the transfer of personal data within a group of undertakings, or a group of enterprises engaged in a joint economic activity and monitoring systems at the work place.",
           "class": ""
         },
         {
@@ -4400,7 +4625,7 @@
       "paragraphs": [
         {
           "id": "art_99__1",
-          "text": "1. This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union .",
+          "text": "1. This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union.",
           "class": ""
         },
         {

@@ -3,7 +3,8 @@
 
 EUR-Lex acts are discovered from their ``authId`` in ``data/index.json``.
 Other sources can opt in with an ``update`` object containing ``url`` and
-``parser`` (``consolidated``, ``oj``, ``boersengesetz``, or ``nis2_bsig``).
+``parser`` (``consolidated``, ``consolidated_lists``, ``oj``, ``oj_lists``,
+``boersengesetz``, or ``nis2_bsig``).
 """
 
 from __future__ import annotations
@@ -218,7 +219,12 @@ def parse_articles(content: bytes, parser_name: str, encoding: str) -> list[dict
         html = decode_html(content, encoding)
         parsers = {
             "consolidated": ("parser_consolidated.py", "update_parser_consolidated"),
+            "consolidated_lists": (
+                "parser_consolidated_lists.py",
+                "update_parser_consolidated_lists",
+            ),
             "oj": ("parser_oj.py", "update_parser_oj"),
+            "oj_lists": ("parser_oj_lists.py", "update_parser_oj_lists"),
             "boersengesetz": ("parser_boersengesetz.py", "update_parser_boersengesetz"),
         }
         names = ("consolidated", "oj") if parser_name == "auto" else (parser_name,)
