@@ -13,21 +13,29 @@ const nextButton = document.getElementById('nextArticle');
 const articleNav = document.querySelector('.article-navigation');
 const sidePanel = document.querySelector('.side-panel');
 const collapseAllButton = document.getElementById('collapseAllButton');
+const layoutElement = document.querySelector('.layout');
+const articleContentElement = document.querySelector('.article-content');
+const actPanel = document.getElementById('actPanel');
+const actPanelTitle = document.getElementById('actPanelTitle');
+const actPanelList = document.getElementById('actArticleList');
+const actPanelClose = document.getElementById('actPanelClose');
 
 let allArticles = [];
 let visibleArticles = [];
 let allSidebarItems = [];
 let visibleSidebarItems = [];
 let articleButtons = new Map();
+let panelArticleButtons = new Map();
 let currentArticleId = null;
 let currentArticleSelectionKey = null;
 let currentSidebarSelectionKey = null;
+// Act whose articles are shown in the side-by-side article panel (at most one).
 let expandedActIds = new Set();
-// Acts the user has explicitly collapsed while a search is active (search would
-// otherwise force every matching act open).
-let searchCollapsedActIds = new Set();
 let expandedBundleIds = new Set();
-let expandedBundleActIds = new Set(); // composite keys: "bundleId::actId"
+// Folder just opened, whose child list should slide in after the next rebuild.
+let pendingFolderSlideId = null;
+let lastSidebarSignature = null;
+let renderedPanelKey = null;
 let isUpdatingHash = false;
 let currentHighlightedParagraphId = null;
 let sidePanelScrollPosition = 0;
@@ -642,7 +650,7 @@ const updateListMessage = () => {
 };
 
 const highlightActiveLink = () => {
-  articleButtons.forEach((button, id) => {
+  const apply = (button, id) => {
     const isActive = id === currentSidebarSelectionKey || (currentArticleSelectionKey && id === currentArticleSelectionKey);
     button.classList.toggle('is-active', isActive);
     if (isActive) {
@@ -650,7 +658,52 @@ const highlightActiveLink = () => {
     } else {
       button.removeAttribute('aria-current');
     }
-  });
+  };
+  articleButtons.forEach(apply);
+  panelArticleButtons.forEach(apply);
+};
+
+const SLIDE_DURATION_MS = 220;
+const SLIDE_EASING = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+const prefersReducedMotion = () => Boolean(
+  window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+);
+
+const canAnimate = (el) => Boolean(el && typeof el.animate === 'function' && !prefersReducedMotion());
+
+// Slide a freshly inserted list open from zero height.
+const slideOpen = (el) => {
+  if (!canAnimate(el)) return;
+  el.style.overflow = 'hidden';
+  const anim = el.animate(
+    [{ height: '0px', opacity: 0 }, { height: `${el.scrollHeight}px`, opacity: 1 }],
+    { duration: SLIDE_DURATION_MS, easing: SLIDE_EASING },
+  );
+  anim.onfinish = () => { el.style.overflow = ''; };
+  anim.oncancel = anim.onfinish;
+};
+
+// Slide a list closed, then run `done` (which typically rebuilds the sidebar).
+const slideClosed = (el, done) => {
+  if (!canAnimate(el)) {
+    done();
+    return;
+  }
+  el.style.overflow = 'hidden';
+  const anim = el.animate(
+    [{ height: `${el.scrollHeight}px`, opacity: 1 }, { height: '0px', opacity: 0 }],
+    { duration: SLIDE_DURATION_MS, easing: SLIDE_EASING, fill: 'forwards' },
+  );
+  anim.onfinish = done;
+};
+
+// Restart a short CSS enter animation on an element.
+const playEnterAnimation = (el, className) => {
+  if (!el || prefersReducedMotion()) return;
+  el.classList.remove(className);
+  void el.offsetWidth;
+  el.classList.add(className);
 };
 
 const updateNavigationButtons = () => {
@@ -1052,25 +1105,128 @@ const renderBundle = (bundle) => {
 };
 
 const renderArticleList = () => {
-  renderSidebarList(visibleSidebarItems);
+  // Only rebuild the sidebar when its structure changes; selection changes just
+  // re-highlight in place so rows keep their transitions and scroll position.
+  const signature = JSON.stringify([
+    visibleSidebarItems.map(getSidebarItemKey),
+    [...expandedBundleIds].sort(),
+    lastSearchQuery,
+  ]);
+  if (signature !== lastSidebarSignature) {
+    lastSidebarSignature = signature;
+    renderSidebarList(visibleSidebarItems);
+  } else {
+    highlightActiveLink();
+    updateCollapseAllButton();
+  }
+  syncActRowState();
+  renderActPanel();
 };
 
-// Show the collapse-all control only when something is manually expanded
-// (during an active search expansion is forced, so the control is hidden).
+const getPanelActId = () => (expandedActIds.size ? [...expandedActIds][0] : null);
+
+// Mark the act row whose articles are shown in the panel.
+const syncActRowState = () => {
+  const panelActId = getPanelActId();
+  articleButtons.forEach((button, key) => {
+    if (!key.startsWith('act:') || !button.classList.contains('opens-panel')) return;
+    const open = key === `act:${panelActId}`;
+    button.classList.toggle('is-expanded', open);
+    button.setAttribute('aria-expanded', String(open));
+  });
+};
+
+// Show the selected act's articles in a panel next to the sidebar.
+const renderActPanel = () => {
+  if (!actPanel || !layoutElement) return;
+
+  const actId = getPanelActId();
+  const act = actId ? allActs.find((a) => a.id === actId) : null;
+  const articles = act && Array.isArray(act.articles)
+    ? act.articles.filter((a) => a && a.id && (!lastSearchQuery || matchesItem(a, lastSearchQuery)))
+    : [];
+  const wasOpen = layoutElement.classList.contains('has-act-panel');
+  const open = Boolean(act && articles.length);
+
+  layoutElement.classList.toggle('has-act-panel', open);
+  actPanel.setAttribute('aria-hidden', String(!open));
+  actPanel.inert = !open;
+  if (!open) {
+    // Leave the old content in place so it is visible while the panel slides shut.
+    highlightActiveLink();
+    return;
+  }
+
+  const panelKey = `${act.id}|${lastSearchQuery}`;
+  if (panelKey !== renderedPanelKey) {
+    const switchingAct = wasOpen && renderedPanelKey && !renderedPanelKey.startsWith(`${act.id}|`);
+    renderedPanelKey = panelKey;
+    setListTitle(actPanelTitle, act);
+    actPanelList.innerHTML = '';
+    panelArticleButtons = new Map();
+
+    const fragment = document.createDocumentFragment();
+    articles.forEach((article) => {
+      const rowItem = document.createElement('li');
+      rowItem.className = 'act-panel-item';
+
+      const rowButton = document.createElement('button');
+      rowButton.type = 'button';
+      rowButton.className = 'article-link article-child-link';
+
+      const rowTitle = document.createElement('span');
+      rowTitle.className = 'list-article-number';
+      rowTitle.textContent = article.title || article.id;
+      rowButton.appendChild(rowTitle);
+
+      const rowHeading = getHeadingText(article);
+      if (rowHeading) {
+        const rowHeadingSpan = document.createElement('span');
+        rowHeadingSpan.className = 'list-article-heading';
+        rowHeadingSpan.textContent = rowHeading;
+        rowButton.appendChild(rowHeadingSpan);
+      }
+
+      rowButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        selectArticle(article.id, {
+          updateHash: true,
+          focus: false,
+          parentActId: act.id,
+          hashTarget: `a:${act.id}:${article.id}`,
+        });
+      });
+
+      rowItem.appendChild(rowButton);
+      panelArticleButtons.set(getArticleSelectionKey(article.id, act.id), rowButton);
+      fragment.appendChild(rowItem);
+    });
+    actPanelList.appendChild(fragment);
+    actPanel.scrollTop = 0;
+    if (switchingAct) playEnterAnimation(actPanelList, 'is-entering');
+  }
+
+  highlightActiveLink();
+};
+
+const closeActPanel = () => {
+  expandedActIds.clear();
+  renderArticleList();
+};
+
+// Show the collapse-all control only when something is expanded
+// (hidden during an active search).
 const updateCollapseAllButton = () => {
   if (!collapseAllButton) return;
   const searchActive = Boolean(lastSearchQuery && lastSearchQuery.trim());
-  const anyExpanded = expandedActIds.size > 0
-    || expandedBundleIds.size > 0
-    || expandedBundleActIds.size > 0;
+  const anyExpanded = expandedActIds.size > 0 || expandedBundleIds.size > 0;
   collapseAllButton.hidden = searchActive || !anyExpanded;
 };
 
-// Collapse every expanded folder and act, then re-render the sidebar
+// Collapse every expanded folder and close the article panel
 const collapseAll = () => {
   expandedActIds.clear();
   expandedBundleIds.clear();
-  expandedBundleActIds.clear();
   renderArticleList();
 };
 
@@ -1089,41 +1245,42 @@ const renderSidebarList = (items = []) => {
     btn.appendChild(chev);
   };
 
-  // Build a single article row under an act (used at top level and when nested).
-  const createArticleRow = (article, actId, onActivate) => {
-    const rowItem = document.createElement('li');
-    rowItem.className = 'act-article-list-item';
-
-    const rowButton = document.createElement('button');
-    rowButton.type = 'button';
-    rowButton.className = 'article-link article-child-link';
-
-    const rowTitle = document.createElement('span');
-    rowTitle.className = 'list-article-number';
-    rowTitle.textContent = article.title || article.id;
-    rowButton.appendChild(rowTitle);
-
-    const rowHeading = getHeadingText(article);
-    if (rowHeading) {
-      const rowHeadingSpan = document.createElement('span');
-      rowHeadingSpan.className = 'list-article-heading';
-      rowHeadingSpan.textContent = rowHeading;
-      rowButton.appendChild(rowHeadingSpan);
-    }
-
-    rowButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      onActivate();
-    });
-
-    rowItem.appendChild(rowButton);
-    articleButtons.set(getArticleSelectionKey(article.id, actId), rowButton);
-    return rowItem;
+  // Act rows open their article list in the panel next to the sidebar.
+  const appendPanelDisclosure = (btn, act) => {
+    if (!Array.isArray(act.articles) || !act.articles.length) return;
+    btn.classList.add('opens-panel');
+    appendDisclosure(btn, false);
   };
 
-  // Build an act row nested inside a folder, with its expandable article list.
-  const createNestedActRow = (act, parentBundleId) => {
+  const activateAct = (actId) => {
+    setExpandedAct(actId, { allowCollapse: true });
+    handleRoute(`act:${actId}`);
+    updateLocationHash(`act:${actId}`);
+  };
+
+  // Toggle a folder, sliding its child list closed before it is removed.
+  const toggleFolder = (folderId, button) => {
+    if (expandedBundleIds.has(folderId)) {
+      handleRoute(`bundle:${folderId}`);
+      updateLocationHash(`bundle:${folderId}`);
+      const childList = button.nextElementSibling;
+      slideClosed(childList, () => {
+        expandedBundleIds.delete(folderId);
+        renderArticleList();
+      });
+      return;
+    }
+    expandedBundleIds.add(folderId);
+    pendingFolderSlideId = folderId;
+    renderArticleList();
+    handleRoute(`bundle:${folderId}`);
+    updateLocationHash(`bundle:${folderId}`);
+  };
+
+  let folderListToSlide = null;
+
+  // Build an act row nested inside a folder; its articles open in the side panel.
+  const createNestedActRow = (act) => {
     const actItem = document.createElement('li');
     actItem.className = 'act-article-list-item';
 
@@ -1152,46 +1309,16 @@ const renderSidebarList = (items = []) => {
       actButton.appendChild(actHeadingSpan);
     }
 
-    const bundleActKey = `${parentBundleId}::${act.id}`;
-    const hasArticles = Array.isArray(act.articles) && act.articles.length > 0;
-    if (hasArticles) {
-      appendDisclosure(actButton, expandedBundleActIds.has(bundleActKey));
-    }
+    appendPanelDisclosure(actButton, act);
 
     actButton.addEventListener('click', (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
-      if (expandedBundleActIds.has(bundleActKey)) {
-        expandedBundleActIds.delete(bundleActKey);
-      } else {
-        expandedBundleActIds.add(bundleActKey);
-      }
-      renderArticleList();
-      handleRoute(`act:${act.id}`);
-      updateLocationHash(`act:${act.id}`);
+      activateAct(act.id);
     });
 
     actItem.appendChild(actButton);
     articleButtons.set(`act:${act.id}`, actButton);
-
-    if (hasArticles && expandedBundleActIds.has(bundleActKey)) {
-      const childList = document.createElement('ul');
-      childList.className = 'act-article-list';
-      act.articles.forEach((article) => {
-        if (!article || !article.id) {
-          return;
-        }
-        childList.appendChild(createArticleRow(article, act.id, () => {
-          selectArticle(article.id, {
-            updateHash: true,
-            focus: false,
-            parentActId: act.id,
-            hashTarget: `a:${act.id}:${article.id}`,
-          });
-        }));
-      });
-      actItem.appendChild(childList);
-    }
 
     return actItem;
   };
@@ -1218,14 +1345,7 @@ const renderSidebarList = (items = []) => {
     subButton.addEventListener('click', (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
-      if (expandedBundleIds.has(folder.id)) {
-        expandedBundleIds.delete(folder.id);
-      } else {
-        expandedBundleIds.add(folder.id);
-      }
-      renderArticleList();
-      handleRoute(`bundle:${folder.id}`);
-      updateLocationHash(`bundle:${folder.id}`);
+      toggleFolder(folder.id, subButton);
     });
 
     subItem.appendChild(subButton);
@@ -1233,14 +1353,14 @@ const renderSidebarList = (items = []) => {
 
     if (expandedBundleIds.has(folder.id)) {
       const childList = buildMemberList(folder);
-      if (childList) {
-        subItem.appendChild(childList);
-      } else {
-        const emptyNote = document.createElement('p');
-        emptyNote.className = 'folder-empty-note';
-        emptyNote.textContent = 'No regulations yet';
-        subItem.appendChild(emptyNote);
+      let childElement = childList;
+      if (!childElement) {
+        childElement = document.createElement('p');
+        childElement.className = 'folder-empty-note';
+        childElement.textContent = 'No regulations yet';
       }
+      subItem.appendChild(childElement);
+      if (folder.id === pendingFolderSlideId) folderListToSlide = childElement;
     }
 
     return subItem;
@@ -1268,7 +1388,7 @@ const renderSidebarList = (items = []) => {
       if (!act) {
         return;
       }
-      list.appendChild(createNestedActRow(act, bundleItem.id));
+      list.appendChild(createNestedActRow(act));
       rendered += 1;
     });
 
@@ -1321,43 +1441,16 @@ const renderSidebarList = (items = []) => {
 
     if (item.type === 'bundle') {
       appendDisclosure(button, expandedBundleIds.has(item.id));
-    } else if (Array.isArray(item.articles) && item.articles.length) {
-      const searchActive = Boolean(lastSearchQuery && lastSearchQuery.trim());
-      const actExpanded = searchActive
-        ? !searchCollapsedActIds.has(item.id)
-        : expandedActIds.has(item.id);
-      appendDisclosure(button, actExpanded);
+    } else {
+      appendPanelDisclosure(button, item);
     }
 
-    // Clicking updates the view: toggle expand/collapse and open act, or expand bundle
     button.addEventListener('click', () => {
       if (item.type === 'bundle') {
-        if (expandedBundleIds.has(item.id)) {
-          expandedBundleIds.delete(item.id);
-        } else {
-          expandedBundleIds.add(item.id);
-        }
-        renderArticleList();
-        handleRoute(`bundle:${item.id}`);
-        updateLocationHash(`bundle:${item.id}`);
+        toggleFolder(item.id, button);
         return;
       }
-
-      const actId = item.id;
-      const hasActiveSearch = Boolean(lastSearchQuery && lastSearchQuery.trim());
-      if (hasActiveSearch) {
-        // During search, toggle this act's collapsed state directly.
-        if (searchCollapsedActIds.has(actId)) {
-          searchCollapsedActIds.delete(actId);
-        } else {
-          searchCollapsedActIds.add(actId);
-        }
-      } else {
-        setExpandedAct(actId, { allowCollapse: true });
-      }
-      renderArticleList();
-      handleRoute(`act:${actId}`);
-      updateLocationHash(`act:${actId}`);
+      activateAct(item.id);
     });
 
     listItem.appendChild(button);
@@ -1367,43 +1460,8 @@ const renderSidebarList = (items = []) => {
       const memberList = buildMemberList(item);
       if (memberList) {
         listItem.appendChild(memberList);
+        if (item.id === pendingFolderSlideId) folderListToSlide = memberList;
       }
-    }
-
-    const visibleChildArticles = Array.isArray(item.articles)
-      ? item.articles.filter((article) => (!lastSearchQuery || matchesItem(article, lastSearchQuery)))
-      : [];
-
-    const searchActive = Boolean(lastSearchQuery && lastSearchQuery.trim());
-    const showChildren = searchActive
-      ? !searchCollapsedActIds.has(item.id)
-      : expandedActIds.has(item.id);
-
-    if (item.type === 'act' && visibleChildArticles.length && showChildren) {
-      const childList = document.createElement('ul');
-      childList.className = 'act-article-list';
-
-      visibleChildArticles.forEach((article) => {
-        if (!article || !article.id) {
-          return;
-        }
-        childList.appendChild(createArticleRow(article, item.id, () => {
-          const parentActId = item.id;
-          const wasExpanded = expandedActIds.has(parentActId);
-          setExpandedAct(parentActId);
-          if (!wasExpanded) {
-            renderArticleList();
-          }
-          selectArticle(article.id, {
-            updateHash: true,
-            focus: false,
-            parentActId,
-            hashTarget: `a:${parentActId}:${article.id}`,
-          });
-        }));
-      });
-
-      listItem.appendChild(childList);
     }
 
     fragment.appendChild(listItem);
@@ -1413,6 +1471,8 @@ const renderSidebarList = (items = []) => {
   });
 
   articleListElement.appendChild(fragment);
+  pendingFolderSlideId = null;
+  slideOpen(folderListToSlide);
   updateListMessage();
   highlightActiveLink();
   updateCollapseAllButton();
@@ -1428,7 +1488,7 @@ const renderSidebarList = (items = []) => {
     // After layout settles, only nudge the active item into view if it ended up
     // outside the panel (e.g. breadcrumb, hash link, or keyboard navigation).
     requestAnimationFrame(() => {
-      const activeKey = currentArticleSelectionKey || currentSidebarSelectionKey;
+      const activeKey = currentSidebarSelectionKey;
       const activeButton = activeKey ? articleButtons.get(activeKey) : null;
       if (activeButton) {
         const panelRect = sidePanel.getBoundingClientRect();
@@ -1466,25 +1526,14 @@ const selectArticle = (articleId, options = {}) => {
   }
 
   const parentActId = preferredParentActId || article._actId || article.id;
+  const previousArticleSelectionKey = currentArticleSelectionKey;
   currentArticleSelectionKey = getArticleSelectionKey(article.id, parentActId);
   const hasParentAct = allActs.some((act) => act.id === parentActId);
   currentSidebarSelectionKey = hasParentAct ? `act:${parentActId}` : null;
   if (hasParentAct) {
-    const folderPath = findActFolderPath(parentActId) || [];
-    if (folderPath.length) {
-      // Act lives inside folder(s): expand the whole chain and the act's
-      // article list so the paragraph is revealed and highlighted on the left.
-      folderPath.forEach((b) => expandedBundleIds.add(b.id));
-      const containing = folderPath[folderPath.length - 1];
-      expandedBundleActIds.add(`${containing.id}::${parentActId}`);
-      renderArticleList();
-    } else {
-      const wasExpanded = expandedActIds.has(parentActId);
-      setExpandedAct(parentActId);
-      if (!wasExpanded) {
-        renderArticleList();
-      }
-    }
+    (findActFolderPath(parentActId) || []).forEach((b) => expandedBundleIds.add(b.id));
+    setExpandedAct(parentActId);
+    renderArticleList();
   }
 
   if (!visibleArticles.some((item) => item.id === articleId)) {
@@ -1495,6 +1544,9 @@ const selectArticle = (articleId, options = {}) => {
 
   currentArticleId = articleId;
   renderArticleDetail(article);
+  if (previousArticleSelectionKey !== currentArticleSelectionKey) {
+    playEnterAnimation(articleContentElement, 'is-entering');
+  }
 
   const targetParagraphId = options.targetParagraphId || null;
   let hashTarget = options.hashTarget || null;
@@ -1519,7 +1571,7 @@ const selectArticle = (articleId, options = {}) => {
   updateNavigationButtons();
   updateStatus();
 
-  const button = articleButtons.get(currentArticleSelectionKey) || articleButtons.get(getArticleSelectionKey(articleId));
+  const button = panelArticleButtons.get(currentArticleSelectionKey) || articleButtons.get(getArticleSelectionKey(articleId));
   if (button && options.scrollIntoView !== false) {
     button.scrollIntoView({ block: 'nearest' });
   }
@@ -1582,6 +1634,7 @@ const handleRoute = (hashId) => {
     // Expand the folder chain that contains this act so it shows on the left.
     const folderPath = findActFolderPath(id) || [];
     folderPath.forEach((b) => expandedBundleIds.add(b.id));
+    if (changedSelection) setExpandedAct(id);
     // render act-level view
     renderItem(act);
     currentSidebarSelectionKey = `act:${id}`;
@@ -1592,7 +1645,10 @@ const handleRoute = (hashId) => {
     updateNavigationButtons();
     updateStatus();
     // Show a newly opened act from the top (also fixes the initial load offset).
-    if (changedSelection) window.scrollTo({ top: 0 });
+    if (changedSelection) {
+      window.scrollTo({ top: 0 });
+      playEnterAnimation(articleContentElement, 'is-entering');
+    }
     return true;
   }
 
@@ -1608,6 +1664,7 @@ const handleRoute = (hashId) => {
     const ancestors = (findBundlePath(id) || [bundle]).slice(0, -1);
     ancestors.forEach((b) => expandedBundleIds.add(b.id));
     const changedSelection = currentSidebarSelectionKey !== `bundle:${id}`;
+    if (changedSelection) expandedActIds.clear();
     renderItem(bundle);
     currentSidebarSelectionKey = `bundle:${id}`;
     currentArticleSelectionKey = null;
@@ -1615,7 +1672,10 @@ const handleRoute = (hashId) => {
     renderArticleList();
     updateNavigationButtons();
     updateStatus();
-    if (changedSelection) window.scrollTo({ top: 0 });
+    if (changedSelection) {
+      window.scrollTo({ top: 0 });
+      playEnterAnimation(articleContentElement, 'is-entering');
+    }
     return true;
   }
 
@@ -1769,10 +1829,6 @@ const matchesItem = (item, query) => {
 
 const applyFilter = (query) => {
   const normalisedQuery = `${query || ''}`.trim().toLowerCase();
-  if (normalisedQuery !== lastSearchQuery) {
-    // A new/changed query starts fresh with every matching act expanded.
-    searchCollapsedActIds = new Set();
-  }
   lastSearchQuery = normalisedQuery;
 
   if (!normalisedQuery) {
@@ -2036,7 +2092,7 @@ const fetchArticles = async () => {
     ];
     expandedActIds = new Set();
     expandedBundleIds = new Set();
-    expandedBundleActIds = new Set();
+    lastSidebarSignature = null;
 
     if (!allSidebarItems.length) {
       statusMessage.textContent = 'No acts available at this time.';
@@ -2091,6 +2147,9 @@ prevButton.addEventListener('click', goToPrevious);
 nextButton.addEventListener('click', goToNext);
 if (collapseAllButton) {
   collapseAllButton.addEventListener('click', collapseAll);
+}
+if (actPanelClose) {
+  actPanelClose.addEventListener('click', closeActPanel);
 }
 
 const pageHeader = document.getElementById('pageHeader');

@@ -36,6 +36,16 @@
         </div>
       </aside>
 
+      <aside id="actPanel" class="act-panel" aria-label="Articles of the selected act" aria-hidden="true" inert>
+        <div class="act-panel-inner">
+          <div class="act-panel-header">
+            <span id="actPanelTitle" class="act-panel-title"></span>
+            <button type="button" id="actPanelClose" class="act-panel-close" aria-label="Close article list">&times;</button>
+          </div>
+          <ul id="actArticleList" class="act-panel-list"></ul>
+        </div>
+      </aside>
+
       <section class="article-content">
         <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
         <header class="article-header">

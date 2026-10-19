@@ -370,11 +370,126 @@ textarea {
 }
 
 .layout {
+  --act-panel-width: 280px;
+  --glide: 340ms cubic-bezier(0.22, 1, 0.36, 1);
   display: grid;
-  grid-template-columns: minmax(240px, 300px) 1fr;
+  grid-template-columns: minmax(240px, 300px) auto 1fr;
   gap: 0;
   align-items: flex-start;
   min-height: calc(100vh - 3.25rem);
+}
+
+/* Article list of the selected act, shown next to the sidebar */
+.act-panel {
+  position: sticky;
+  top: 3.25rem;
+  width: 0;
+  max-height: calc(100vh - 3.25rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  background: var(--surface-light);
+  box-shadow: inset -1px 0 0 var(--border-subtle);
+  opacity: 0;
+  transition: width var(--glide), opacity var(--glide);
+}
+
+.layout.has-act-panel .act-panel {
+  width: var(--act-panel-width);
+  opacity: 1;
+}
+
+.act-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.act-panel::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+/* Fixed width, slid in step with the column so text glides in fully formed
+   instead of being uncovered or re-wrapped */
+.act-panel-inner {
+  width: var(--act-panel-width);
+  padding: 0 0.75rem 0.75rem;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  transition: transform var(--glide);
+}
+
+.layout.has-act-panel .act-panel-inner {
+  transform: translateX(0);
+}
+
+.act-panel-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.85rem 0 0.6rem;
+  background: var(--surface-light);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 0.5rem;
+}
+
+.act-panel-title {
+  font-weight: 700;
+  font-size: var(--fs-body-big);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.act-panel-close {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.act-panel-close:hover {
+  color: var(--accent-blue);
+  border-color: var(--border-subtle);
+  background: rgba(0, 0, 153, 0.04);
+}
+
+.act-panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.act-panel-item {
+  margin: 0.15rem 0;
+}
+
+.act-panel-list .article-child-link {
+  background: transparent;
+}
+
+.act-panel-list .article-child-link:hover {
+  background: #fff;
+}
+
+.act-panel-list.is-entering {
+  animation: slideInLeft 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.article-content.is-entering {
+  animation: contentIn 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Sidebar panel */
@@ -386,6 +501,7 @@ textarea {
   position: sticky;
   top: 3.25rem;
   max-height: calc(100vh - 3.25rem);
+  overflow-x: hidden;
   overflow-y: auto;
   border: none;
   border-right: 1px solid var(--border-subtle);
@@ -605,6 +721,29 @@ textarea {
 
 .article-link.is-expanded .disclosure {
   transform: translateY(-35%) rotate(45deg);
+}
+
+/* Act rows open a side panel, so their chevron keeps pointing right */
+.article-link.opens-panel.is-expanded .disclosure {
+  transform: translate(2px, -65%) rotate(-45deg);
+  border-color: var(--accent-blue);
+}
+
+/* Fisheye: the chosen act/article is magnified, its neighbours slightly */
+.article-link {
+  transform-origin: left center;
+}
+
+.article-link.is-active,
+.article-link.is-active:hover {
+  z-index: 1;
+  transform: scale(1.04);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+li:has(> .article-link.is-active) + li > .article-link,
+li:has(+ li > .article-link.is-active) > .article-link {
+  transform: scale(1.015);
 }
 
 .article-link.is-active .list-article-number {
@@ -1522,8 +1661,23 @@ button:focus-visible,
 
 /* Responsive design */
 @media (max-width: 1080px) {
-  .layout {
+  .layout,
+  .layout.has-act-panel {
     grid-template-columns: 1fr;
+  }
+  .act-panel {
+    display: none;
+    position: static;
+    max-height: 50vh;
+  }
+  .layout.has-act-panel .act-panel {
+    display: block;
+    width: auto;
+  }
+  .act-panel-inner,
+  .layout.has-act-panel .act-panel-inner {
+    width: auto;
+    transform: none;
   }
   .side-panel {
     position: static;

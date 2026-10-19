@@ -181,24 +181,23 @@ test('copy Link on a folder (bundle) heading yields a bundle permalink', async (
   assert.match(app.clipboard(), /#bundle:bundle_dora$/);
 });
 
-test('an act can be collapsed while a search is active', async () => {
+test('the selected act lists its matching articles in the side panel during search', async () => {
   const input = app.doc.getElementById('searchInput');
   input.value = 'processing';
   input.dispatchEvent(new app.window.Event('input', { bubbles: true }));
   await app.tick(); // search is debounced ~180ms < tick 200ms
+  await app.tick(); // then the first match is opened via a hash change
 
-  const expandedItem = [...app.doc.querySelectorAll('#articleList > .article-list-item')]
-    .find((li) => li.querySelector(':scope > .act-article-list'));
-  assert.ok(expandedItem, 'expected at least one expanded act in the search results');
-  const label = expandedItem.querySelector('.list-article-number').textContent;
-
-  // Clicking the act while searching should collapse its children.
-  expandedItem.querySelector(':scope > .article-link').click();
-  await app.tick();
-  const afterCollapse = [...app.doc.querySelectorAll('#articleList > .article-list-item')]
-    .find((li) => li.querySelector('.list-article-number')?.textContent === label);
+  const layout = app.doc.querySelector('.layout');
+  assert.ok(layout.classList.contains('has-act-panel'), 'expected the article panel to open for the first match');
+  assert.ok(app.doc.querySelectorAll('#actArticleList > li').length > 0, 'expected articles in the panel');
   assert.ok(
-    !afterCollapse.querySelector(':scope > .act-article-list'),
-    'act children should hide after clicking to collapse during search',
+    !app.doc.querySelector('#articleList .article-link.opens-panel + .act-article-list'),
+    'articles should not be rendered inline in the sidebar',
   );
+
+  // Clicking the open act again closes the panel.
+  app.doc.querySelector('#articleList .article-link.opens-panel.is-expanded').click();
+  await app.tick();
+  assert.ok(!layout.classList.contains('has-act-panel'), 'panel should close after clicking the open act');
 });
