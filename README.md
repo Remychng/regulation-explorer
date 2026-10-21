@@ -154,8 +154,42 @@ re-links the complete corpus and rebuilds `data/index.db` and
 limit a run. Detailed function and update activity is written to
 `logs/update_regulations.log`; logs rotate at 100 MB.
 
-Non-EUR-Lex acts can define an `update` object in `data/index.json` with a
-`url` and parser name (`consolidated`, `oj`, `boersengesetz`, or `nis2_bsig`).
-Set `status` to another schema-supported value (for example `Repealed`) to
-exclude an act from automatic updates; `dateInForce` is also mirrored into the
-generated database.
+Acts can define an `update` object in `data/index.json` with a `url` and parser
+name (`consolidated`, `consolidated_lists`, `oj`, `oj_lists`, `boersengesetz`,
+or `nis2_bsig`). Set `status` to another schema-supported value (for example
+`Repealed`) to exclude an act from automatic updates; `dateInForce` is also
+mirrored into the generated database.
+
+### List-aware EU parsers
+
+The standard `oj` and `consolidated` parsers can flatten lists nested inside a
+paragraph into one block. The `oj_lists` and `consolidated_lists` variants split
+list points into separate blocks and mark nested points with `list-item-l1` and
+`list-item-l2`. They also preserve text that is not wrapped in a paragraph
+element.
+
+Currently, GDPR uses `oj_lists`, and DSGVO uses `consolidated_lists`. The
+original parsers remain available for other acts.
+
+Comparisons against tracked source HTML indicate these registered acts may
+benefit from migration:
+
+| Act | Saved source | Parser format | Blocks: current to list-aware |
+|---|---|---|---:|
+| MiFID II | [`regulations-data/02014L0065.html`](regulations-data/02014L0065.html) | `consolidated` | 752 to 1,332 |
+| CSDR | [`regulations-data/32014R0909.html`](regulations-data/32014R0909.html) | `oj` | 340 to 698 |
+| AI Act | [`regulations-data/CELEX_02024R1689-20260727_EN_TXT.html`](regulations-data/CELEX_02024R1689-20260727_EN_TXT.html) | `consolidated` | 806 to 1,196 |
+| Cybersecurity Act | [`regulations-data/CELEX_32019R0881_EN_TXT.html`](regulations-data/CELEX_32019R0881_EN_TXT.html) | `oj` | 324 to 483 |
+| NIS2 | [`regulations-data/CELEX_32022L2555_EN_TXT.html`](regulations-data/CELEX_32022L2555_EN_TXT.html) | `oj` | 241 to 510 |
+
+These counts come from the saved source snapshots and indicate additional
+block splitting, not by themselves that every output difference is correct.
+Migrate acts individually: set their `update.parser` in `data/index.json`,
+re-import with `python3 tools/update_regulations.py <act-id>`, then review the
+result against its source. Some comparisons also showed text the old parser had
+omitted, so check content as well as block counts.
+
+Splitting blocks changes paragraph IDs. Saved links to paragraph-level IDs may
+therefore point to different text, although article-level IDs are unchanged.
+Acts using other source formats or parsers, such as Börsengesetz, BDSG, and
+BSIG, should not be switched to these variants without a source-specific test.
